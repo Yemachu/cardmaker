@@ -5,6 +5,9 @@
  */
 var require = {
 	paths: {
-		"webfont": ["lib/webfont/webfontloader.js"]
+		"webfont": ["https://unpkg.com/webfontloader@1.6.28/webfontloader", "lib/webfont/webfontloader.js"],
+		"react": ["https://unpkg.com/react@16/umd/react.development"],
+		"react-dom": ["https://unpkg.com/react-dom@16/umd/react-dom.development"],
+		"react-class": ["https://unpkg.com/create-react-class@15.6.3/create-react-class.min"]
 	}
 }
