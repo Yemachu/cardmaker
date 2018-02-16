@@ -1,3 +1,6 @@
 [submodule "lib/require"]
 	path = lib/require
 	url = git://github.com/requirejs/requirejs.git
+[submodule "lib/webfont"]
+	path = lib/webfont
+	url = git://github.com/typekit/webfontloader.git
