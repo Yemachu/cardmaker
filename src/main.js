@@ -1,4 +1,7 @@
-define([],function()
+define(["react", "react-dom", "App"],function(React, ReactDOM, App)
 {
-	console.log("Hello world");
+	ReactDOM.render(
+		React.createElement(App), 
+		document.getElementById("react-root")
+	);
 });
