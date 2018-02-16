@@ -35,7 +35,7 @@ define(["react", "react-class"], function Group(React, ReactClass)
 		repaint: function repaint()
 		{
 			// Determine whether this group is in the top of the hierarchy.
-			if (!typeof this.props.repaint === "function")
+			if (typeof this.props.repaint !== "function")
 			{
 				// If it is, no further propagation is needed.
 				this.forceUpdate();
