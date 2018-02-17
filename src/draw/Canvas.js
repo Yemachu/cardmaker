@@ -18,6 +18,7 @@ define(["react", "react-class", "./Group"], function Canvas(React, ReactClass, G
 			return React.createElement(
 				"canvas",
 				{
+					className: this.props.className,
 					width: this.props.width,
 					height: this.props.height,
 					ref: function(canvas){ this.canvas = canvas; }.bind(this)
