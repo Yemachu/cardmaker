@@ -18,7 +18,14 @@ define(["react", "react-class"], function Image(React, ReactClass)
 				"img",
 				{
 					src: this.props.src,
-					onLoad: this.onLoad
+					onLoad: this.onLoad,
+					style: {
+						position: "absolute",
+						left: this.props.style.left,
+						top: this.props.style.top,
+						width: this.props.style.width,
+						height: this.props.style.height
+					}
 				}
 			)
 		},
@@ -26,7 +33,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 		onLoad: function loaded(img)
 		{
 			this.setState({ image: img.target });
-			(this.props.repaint || function(){})();
+			this.props.repaint();
 		},
 		
 		componentDidUpdate()
@@ -38,20 +45,29 @@ define(["react", "react-class"], function Image(React, ReactClass)
 				var ctx = canvas.getContext("2d");
 				ctx.drawImage(
 					this.state.image, 
-					this.props.x, 
-					this.props.y, 
+					this.props.style.left, 
+					this.props.style.top, 
 					// Width and height might not be provided, default to the dimensions
 					// of the specified image in that case. Note that a width of 0 results
 					// in the default size.
-					this.props.width || this.state.image.width, 
-					this.props.height || this.state.image.height
+					this.props.style.width || this.state.image.width, 
+					this.props.style.height || this.state.image.height
 				);
 			}
 		}
 	});
 	// The compiler warns about "getDefaultProps" being deprecated.
 	// Assigning them this way seems to solve it.
-	image.defaultProps = { x: 0, y:0, width: undefined, height: undefined, canvas: null };
+	image.defaultProps = {
+		style: {
+			left: 0, // 
+			top: 0,
+			width: undefined, 
+			height: undefined, 
+		},
+		canvas: null, 
+		repaint: function repaint(){/* Empty function.*/} 
+	};
 	
 	return image;
 });
