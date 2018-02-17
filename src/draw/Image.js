@@ -26,7 +26,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 		onLoad: function loaded(img)
 		{
 			this.setState({ image: img.target });
-			this.props.repaint();
+			(this.props.repaint || function(){})();
 		},
 		
 		componentDidUpdate()
@@ -51,7 +51,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 	});
 	// The compiler warns about "getDefaultProps" being deprecated.
 	// Assigning them this way seems to solve it.
-	image.defaultProps = { x: 0, y:0, width: undefined, height: undefined };
+	image.defaultProps = { x: 0, y:0, width: undefined, height: undefined, canvas: null };
 	
 	return image;
 });
