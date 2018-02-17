@@ -22,7 +22,7 @@ define(["react", "react-class"], function Group(React, ReactClass)
 			});
 			
 			// Create the group.
-			return React.createElement("div", null, children);
+			return React.createElement("div", {style: {position: "relative"}}, children);
 		},
 		
 		/**
