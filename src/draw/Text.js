@@ -26,8 +26,10 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			if (canvas !== null)
 			{
 				var ctx = canvas.getContext("2d");
+				var paragraphs = this.createParagraphs(ctx, this.props.text);; 
+				
 				this.setFont(ctx, this.props.style);
-				this.drawText(ctx, this.props.text, this.props.style.fontSize);
+				this.drawText(ctx, paragraphs, this.props.style.fontSize);
 			}
 		},
 		
@@ -49,11 +51,8 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		 * @param {CanvasRenderingContext2D} ctx Context used for drawing.
 		 * @param {String} text Text to draw.
 		 */
-		drawText: function drawText(ctx, text, lineHeight)
+		drawText: function drawText(ctx, paragraphs, lineHeight)
 		{
-			// TODO: Let the paragraphs be passed down instead of generating them.
-			var paragraphs = this.createParagraphs(ctx, text);
-			
 			ctx.save();
 			ctx.translate(this.props.style.left, this.props.style.top);
 			for (var i=0; i<paragraphs.length; ++i)
