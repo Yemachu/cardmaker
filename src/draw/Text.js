@@ -26,9 +26,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			if (canvas !== null)
 			{
 				var ctx = canvas.getContext("2d");
-				// TODO: Make the font shrink if the text won't fit.
-				// This would require a layour step of some kind to be performed first.
-				this.setFont(ctx);
+				this.setFont(ctx, this.props.style);
 				this.drawText(ctx, this.props.text);
 			}
 		},
@@ -186,12 +184,13 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			}
 		},
 		
-		setFont: function setFont(ctx)
+		setFont: function setFont(ctx, style)
 		{
 			// This function should only be called internally,
 			// hence no sanity checks.
-			var style = this.props.style;
-			ctx.font = [
+			//var style = this.props.style;
+			var font;
+			ctx.font = font = [
 				style.fontStyle, // "normal", "italic" or "oblique".
 				style.fontWeight, // "thin", "normal", "bold". Can also be a number.
 				style.fontSize + "px", // Size of the text in pixels.
