@@ -27,9 +27,36 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			{
 				var ctx = canvas.getContext("2d");
 				
-				this.setFont(ctx, this.props.style);
-				var paragraphs = this.createParagraphs(ctx, this.props.text, this.props.style.width);
-				this.drawText(ctx, paragraphs, this.props.style.fontSize);
+				// this.props cannot be modified by default. Make a deep copy that loses
+				// any read-only traits.
+				var style = JSON.parse(JSON.stringify(this.props.style));
+				
+				ctx.save();
+				
+				var paragraphs; 
+				do
+				{
+					this.setFont(ctx, style);
+					paragraphs = this.createParagraphs(ctx, this.props.text, style.width);
+					
+					// Calculate the height of the text, as it is needed for determining
+					// whether the text should shrink or not.
+					var height = style.fontSize * paragraphs.reduce(function(accumulator, current)
+					{
+						return accumulator + current.length;
+					}, 0);
+					// If no height is provided, there is no need to shrink the text.
+					// The same applies if the text would fit naturally.
+					if (style.height === undefined || height < style.height)
+					{
+						break;
+					}
+					// Lower the font size and try again, until it makes no sens to go on.
+					style.fontSize--;
+				} while(style.fontSize > 0);
+				
+				this.drawText(ctx, paragraphs, style.fontSize);
+				ctx.restore();
 			}
 		},
 		
