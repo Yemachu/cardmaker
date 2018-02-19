@@ -26,22 +26,49 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			if (canvas !== null)
 			{
 				var ctx = canvas.getContext("2d");
-				var paragraphs = this.createParagraphs(ctx, this.props.text);; 
 				
 				this.setFont(ctx, this.props.style);
+				var paragraphs = this.createParagraphs(ctx, this.props.text, this.props.style.width);
 				this.drawText(ctx, paragraphs, this.props.style.fontSize);
 			}
 		},
 		
 		
-		createParagraphs: function createParagraphs(ctx, text)
+		createParagraphs: function createParagraphs(ctx, text, availableWidth)
 		{
 			// Each linebreak indicates a new paragraph as far as this element is 
 			// concerned. This does not match its DOM behaviour.
 			return text.split("\n").map(function(paragraph)
 			{
-				// TODO: Let the text wrap if it is allowed to do so.
-				return [paragraph];
+				// Use spaces as separator for words, and remove double spaces, as they
+				// wouldn't show up in the DOM either.
+				var words = paragraph.split(" ").filter(function(word){return word.length > 0;});
+				var lines = [];
+				
+				var line = { width: 0, words: []};
+				
+				for (var i=0; i<words.length; ++i)
+				{
+					var word = words[i];
+					var wordWidth = ctx.measureText(word).width;
+					
+					if ((line.width + wordWidth) < availableWidth)
+					{
+						line.width += wordWidth;
+						line.words[line.words.length] = word;
+					}
+					else
+					{
+						// Avoid empty lines as a result of very long words.
+						if (line.words.length > 0)
+						{
+							lines[lines.length] = line.words.join(" ");
+						}
+						line = { width: wordWidth, words: [word] };
+					}
+				}
+				lines[lines.length] = line.words.join(" ");
+				return lines;
 			});
 		},
 		
