@@ -27,7 +27,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			{
 				var ctx = canvas.getContext("2d");
 				this.setFont(ctx, this.props.style);
-				this.drawText(ctx, this.props.text);
+				this.drawText(ctx, this.props.text, this.props.style.fontSize);
 			}
 		},
 		
@@ -49,7 +49,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		 * @param {CanvasRenderingContext2D} ctx Context used for drawing.
 		 * @param {String} text Text to draw.
 		 */
-		drawText: function drawText(ctx, text)
+		drawText: function drawText(ctx, text, lineHeight)
 		{
 			// TODO: Let the paragraphs be passed down instead of generating them.
 			var paragraphs = this.createParagraphs(ctx, text);
@@ -65,7 +65,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 					// Account for the new line. By default the text is drawn at the 
 					// baseline, which is one line higher than one might expect; that
 					// issue is also solved by moving one line down.
-					ctx.translate(0, this.props.style.fontSize);
+					ctx.translate(0, lineHeight);
 					// Determine which alignment strategy to use, given a DOM canvas 
 					//doesn't provide all of them, and some have side effects.
 					switch(this.props.style.textAlign)
