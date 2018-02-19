@@ -108,7 +108,15 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		 */
 		drawTextLeftAligned: function leftAligned(ctx, text)
 		{
+			var textWidth = ctx.measureText(text).width;
+			var availableWidth = this.props.style.width || 0;
+			
+			var scale = Math.min(availableWidth / Math.max(textWidth, 1), 1);
+			ctx.save();
+			ctx.scale(scale, 1);
+			
 			ctx.fillText(text, 0, 0);
+			ctx.restore();
 		},
 		
 		/**
@@ -119,10 +127,17 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		 */
 		drawTextRightAligned: function rightAligned(ctx, text)
 		{
+			var textWidth = ctx.measureText(text).width;
+			var availableWidth = this.props.style.width || 0;
 			
-			var width = ctx.measureText(text).width;
-			// TODO: Make the text right align.
-			this.drawTextLeftAligned(ctx, text);
+			var scale = Math.min(availableWidth / Math.max(textWidth, 1), 1);
+			
+			ctx.save();
+			ctx.translate((availableWidth - (textWidth * scale)), 0);
+			ctx.scale(scale, 1);
+			
+			ctx.fillText(text, 0, 0);
+			ctx.restore();
 		},
 		
 		/**
@@ -133,9 +148,17 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		 */
 		drawTextCentered: function centerAligned(ctx, text)
 		{
-			var width = ctx.measureText(text).width;
-			// TODO: Make the text center align.
-			this.drawTextLeftAligned(ctx, text);
+			var textWidth = ctx.measureText(text).width;
+			var availableWidth = this.props.style.width || 0;
+			
+			var scale = Math.min(availableWidth / Math.max(textWidth, 1), 1);
+			
+			ctx.save();
+			ctx.translate((availableWidth / 2) - ((textWidth * scale) / 2), 0);
+			ctx.scale(scale, 1);
+			
+			ctx.fillText(text, 0, 0);
+			ctx.restore();
 		},
 		
 		/**
@@ -175,6 +198,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 				style.fontFamily // Array in the order of which font should be tried.
 			].join(" ");
 		}
+		
 	});
 	
 	text.defaultProps = {
