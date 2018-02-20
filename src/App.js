@@ -1,9 +1,9 @@
-define(["react", "react-class"], function App(React, ReactClass)
+define(["react", "react-class", "tcg/ygo/CardMaker"], function App(React, ReactClass, YGOCardMaker)
 {
 	return ReactClass({
 		render: function render()
 		{
-			return null;
+			return React.createElement(YGOCardMaker, null);
 		}
 	});
 });
