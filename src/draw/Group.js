@@ -25,6 +25,20 @@ define(["react", "react-class"], function Group(React, ReactClass)
 			return React.createElement("div", {style: {position: "relative"}}, children);
 		},
 		
+		componentWillUpdate: function()
+		{
+			if (this.props.repaint !== "function")
+			{
+				this.r = true;
+				var canvas = this.props.canvas;
+				if (canvas !== null)
+				{
+					var ctx = canvas.getContext("2d");
+					ctx.clearRect(0,0,canvas.width, canvas.height);
+				}
+			}
+		},
+		
 		/**
 		 * Indicates that the hierarchy should be redrawn.
 		 *
