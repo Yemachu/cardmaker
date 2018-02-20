@@ -11,6 +11,7 @@
 		<div id="react-root"></div>
 			
 		<script src="src/config.js"></script>
-		<script src="lib/require/require.js" data-main="src/main"></script>
+		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="src/main"></script>
+		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
 	</body>
 </html>
