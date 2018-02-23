@@ -1,9 +1,23 @@
-define(["react", "react-class", "./Card"], function App(React, ReactClass, Card)
+define(["react", "react-class", "./Card", "webfont"], function App(React, ReactClass, Card, WebFont)
 {
 	return ReactClass({
 		
 		getInitialState: function initialState()
 		{
+			WebFont.load({
+				google: { 
+					families: [
+						"Buenard", 
+						"Spectral SC:semi-bold,extra-bold", 
+						"Amiri:italic", 
+						"Audiowide", 
+						"Crimson Text:bold"
+					] 
+				},
+				fontactive: function(){this.forceUpdate();}.bind(this)
+			});
+			
+			
 			return {
 				card:
 				{
