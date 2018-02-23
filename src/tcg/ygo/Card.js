@@ -17,7 +17,7 @@ define(["react", "react-class", "draw/Canvas", "./layout/All"], function App(Rea
 			);
 		}
 	});
-	Card.defaultProps = { layout: Layouts.Monster };
-	Card.layout = Layouts;
+	Card.defaultProps = { layout: Layouts.Vanilla };
+	Card.Layout = Layouts;
 	return Card;
 });
