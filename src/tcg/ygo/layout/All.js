@@ -1,5 +1,5 @@
 define([
-	"./Monster", 
+	"./Shared", 
 ], function ygo_template_all(monster)
 {
 	return {
