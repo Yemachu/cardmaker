@@ -1,5 +1,5 @@
 define([
-	"./Vanilla",
+	"./Normal",
 	"./Effect",
 	"./Ritual",
 	"./Fusion",
@@ -10,10 +10,10 @@ define([
 	"./Token",
 	"./Spell",
 	"./Trap"
-], function ygo_template_all(Vanilla, Effect, Ritual, Fusion, Synchro, DarkSynchro, Xyz,  Link, Token, Spell, Trap)
+], function ygo_template_all(Normal, Effect, Ritual, Fusion, Synchro, DarkSynchro, Xyz,  Link, Token, Spell, Trap)
 {
 	return {
-		Vanilla: Vanilla,
+		Normal: Normal,
 		Effect: Effect,
 		Ritual: Ritual,
 		Fusion: Fusion,
