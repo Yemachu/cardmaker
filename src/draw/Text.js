@@ -3,7 +3,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 	/**
 	 * Draws styled text on a DOM canvas.
 	 */
-	var text = ReactClass({
+	var Text = ReactClass({
 		
 		render: function render()
 		{
@@ -82,16 +82,17 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			var words = paragraph.split(" ").filter(function(word){return word.length > 0;});
 			var lines = [];
 			
-			var line = { width: 0, words: []};
+			var spaceWidth = ctx.measureText(" ").width;
+			var line = { width: -spaceWidth, words: []};
 			
 			for (var i=0; i<words.length; ++i)
 			{
 				var word = words[i];
 				var wordWidth = ctx.measureText(word).width;
 				
-				if ((line.width + wordWidth) < availableWidth)
+				if ((line.width + wordWidth + spaceWidth) < availableWidth)
 				{
-					line.width += wordWidth;
+					line.width += wordWidth + spaceWidth;
 					line.words[line.words.length] = word;
 				}
 				else
@@ -262,7 +263,8 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		
 	});
 	
-	text.defaultProps = {
+	Text.displayName = "Text";
+	Text.defaultProps = {
 		// Avoid sanity checks by providing a pure function.
 		repaint: function repaint(){ /* Empty function which does nothing. */ },
 		canvas: null, // Canvas on which this element should draw.
@@ -276,5 +278,5 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			fontWeight: 400, // Normal text weight, lower is thinner; higher thicker.
 		}
 	};
-	return text;
+	return Text;
 });
