@@ -7,7 +7,7 @@ define(["react", "react-class"], function Group(React, ReactClass)
 	 * and provides a method to them which they can use for updating the hierarchy.
 	 * This due to sorting order.
 	 */
-	return ReactClass({
+	var Group = ReactClass({
 		
 		render: function render()
 		{
@@ -60,4 +60,9 @@ define(["react", "react-class"], function Group(React, ReactClass)
 			}
 		}
 	});
+	Group.displayName = "Group";
+	Group.defaultProps = {
+		
+	};
+	return Group;
 });
