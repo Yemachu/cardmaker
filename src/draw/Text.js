@@ -32,7 +32,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 				var style = JSON.parse(JSON.stringify(this.props.style));
 				
 				ctx.save();
-				
+				ctx.fillStyle = style.color;
 				var paragraphs; 
 				do
 				{
@@ -269,6 +269,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		text: "", // Default to an empty string.
 		width: undefined, // Text can go on indefinitly on the same line.
 		style: { 
+			color: "black",
 			fontFamily: [ "serif" ], // Font to use if not specified.
 			fontSize: 14, // Default font height (in pixels).
 			fontStyle: "normal", // Normal, straight text; could be italic or oblique.
