@@ -5,11 +5,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<title>Custom card maker</title>
+		<link rel="stylesheet" type="text/css" href="css/Style.css" />
+		
+		<style>
+			/** Hide parts of the site based on whether JavaScript is available. */
+			/** This method should prevent issues with FOUT. */
+			.js-yes { display: none; }
+			.js .js-yes { display: block; }
+			.js .js-no { display: none; }
+		</style>
+		<script>
+			// Notify the html tag that JavaScript is available.
+			document.getElementsByTagName("html")[0].classList.add("js")
+		</script>
 	</head>
 	
 	<body lang="en">
-		<div id="react-root"></div>
-			
+		<div id="react-root" class="js-yes">
+			Waiting for JavaScript to load.
+		</div>
+		<div class="js-no">
+			JavaScript seems to be disabled.
+		</div>
 		<script src="src/config.js"></script>
 		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="src/main"></script>
 		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
