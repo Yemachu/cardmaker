@@ -32,7 +32,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 				var style = JSON.parse(JSON.stringify(this.props.style));
 				
 				ctx.save();
-				ctx.fillStyle = style.color;
+				ctx.fillStyle = style.color || "black";
 				var paragraphs; 
 				do
 				{
