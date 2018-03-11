@@ -6,14 +6,15 @@ define(["react", "react-class", "../../Attributes", "draw/Image"], function Attr
 			var props = Object.assign({}, this.props, {
 				// Maps the attribute to a path name
 				src: Attributes[this.props.value].url,
+				style: {
+					// Positioning based on 420 × 610.
+					left:  350,
+					top:    28,
+					width:  40,
+					height: 40,
+				}
 			});
-			return React.createElement(Image, { this.props.value, style: {
-				// Positioning based on 420 × 610.
-				left:  350,
-				top:    28,
-				width:  40,
-				height: 40,
-			}});
+			return React.createElement(Image, props);
 		}
 	});
 	Attribute.displayName = "Attribute";
