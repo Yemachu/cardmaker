@@ -1,9 +1,33 @@
-define(["react", "react-class", "./Shared"], function Effect(React, ReactClass, Shared)
+define(["react", "react-class", "draw/Group", "./component/All"], function Effect(React, ReactClass, Group, C)
 {
-	return ReactClass({
+	var Effect = ReactClass({
 		render: function render()
 		{
-			return React.createElement(Shared, this.props)
+			return React.createElement(
+				Group,
+				this.props,
+				React.createElement(C.Image, { value: this.props.image, pendulum: this.props.pendulum.enabled }),
+				React.createElement(C.Border, { value: "Effect", pendulum: this.props.pendulum.enabled }),
+				React.createElement(C.CardName, { value: this.props.name }),
+				React.createElement(C.Attribute, { value: this.props.attribute }),
+				React.createElement(C.Level, { value: this.props.level, star: "Normal" }),
+				
+				React.createElement(C.Pendulum, this.props.pendulum),
+				
+				React.createElement(C.Type, { value: this.props.type }),
+				React.createElement(C.Effect, { value: this.props.effect }),
+				React.createElement(C.Atk, { value: this.props.atk }),
+				React.createElement(C.Def, { value: this.props.def }),
+				
+				React.createElement(C.Circulation, { value: this.props.circulation }),
+				React.createElement(C.Copyright, { value: this.props.copyright })
+			);
+			
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Effect.pendulum.png" : "res/tcg/ygo/border/Effect.png"}))
 		}
 	});
+	Effect.displayName = "Effect";
+	Effect.defaultProps = {
+	};
+	return Effect;
 });
