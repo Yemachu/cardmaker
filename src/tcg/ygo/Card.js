@@ -1,4 +1,4 @@
-define(["react", "react-class", "draw/Canvas", "./layout/All"], function App(React, ReactClass, Canvas, Layouts)
+define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "./Stars"], function App(React, ReactClass, Canvas, Layouts, Attributes, Stars)
 {
 	var Card = ReactClass({
 		render: function render()
@@ -18,6 +18,9 @@ define(["react", "react-class", "draw/Canvas", "./layout/All"], function App(Rea
 		}
 	});
 	Card.defaultProps = { layout: Layouts.Normal };
+	Card.displayName = "Card";
 	Card.Layout = Layouts;
+	Card.Attributes = Attributes;
+	Card.Stars = Stars;
 	return Card;
 });
