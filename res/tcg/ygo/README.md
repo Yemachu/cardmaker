@@ -1,0 +1,1 @@
+[Zextra](https://forum.yugiohcardmaker.net/topic/323384-zextras-series-9-card-template-psd-available-for-download/) allowed for their template to be used for this card maker. Some images might still need to be modified.
