@@ -22,22 +22,20 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				card:
 				{
 					name: "Neo New Card Maker",
-					level: 4,
-					star: "Normal",
-					type: "Cyberse / Pendulum",
-					effect: "Effect",
-					atk: "?",
-					def: "?",
+					level: 7,
+					type: "Cyberse / Pendulum / Effect",
+					effect: "A card maker that supports the creation of Normal, Effect, Ritual, Fusion, Synchro, Dark Synchro, Xyz and Link monsters. It also provides support for creating Pendulum versions of some card types.",
+					atk: "3000",
+					def: "0",
 					circulation: "This card cannot be used in a Duel.",
 					copyright: "© 1993 YEMACHU",
-					image: "res/tcg/ygo/Foil.png",
 					attribute: "None",
 					pendulum: 
 					{
 						enabled: true,
-						effect: "This card",
-						blue: "7",
-						red: "7"
+						effect: "",
+						blue: "0",
+						red: "13"
 					},
 					link: 
 					{
@@ -101,7 +99,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					React.createElement("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk }),
 					React.createElement("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def }),
 					React.createElement("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation }),
-					//React.createElement("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright }),
+					React.createElement("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright }),
 					React.createElement("input", { onChange: this.updateCardImage("image"), type: "file" }),
 					React.createElement("select", { onChange: this.updateField("card.attribute") }, attributes),
 					React.createElement("select",  { onChange: this.updateTemplate }, templates),
