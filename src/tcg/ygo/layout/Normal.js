@@ -15,7 +15,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Norma
 				React.createElement(C.Pendulum, this.props.pendulum),
 				
 				React.createElement(C.Type, { value: this.props.type }),
-				React.createElement(C.Effect, { value: this.props.effect }),
+				React.createElement(C.Effect, { value: this.props.effect, type: "Vanilla" }),
 				
 				React.createElement(C.Atk, { value: this.props.atk }),
 				React.createElement(C.Def, { value: this.props.def }),

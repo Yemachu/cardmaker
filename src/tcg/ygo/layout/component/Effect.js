@@ -22,6 +22,18 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 				top: 460,
 				width: 350,
 				height: 110
+		},
+		Vanilla: {
+			fontFamily: ["Amiri", "serif"],
+			fontStyle: "italic",
+			
+			fontSize: 12,
+			textAlign: "justify",
+			
+			left: 35,
+			top: 475,
+			width: 350,
+			height: 80
 		}
 	}
 	
