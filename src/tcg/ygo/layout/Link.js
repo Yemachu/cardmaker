@@ -14,7 +14,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Link(
 				React.createElement(C.Type, { value: this.props.type }),
 				React.createElement(C.Effect, { value: this.props.effect }),
 				React.createElement(C.Atk, { value: this.props.atk }),
-				React.createElement(C.Def, { value: this.props.def }),
+				React.createElement(C.Def, { value: this.props.def, type: "Link" }),
 				
 				React.createElement(C.Circulation, { value: this.props.circulation }),
 				React.createElement(C.Copyright, { value: this.props.copyright })
