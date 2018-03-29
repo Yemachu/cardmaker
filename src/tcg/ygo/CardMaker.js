@@ -117,6 +117,14 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						React.createElement("input", { onChange: this.updateField("card.pendulum.red"), type: "text", value: this.state.card.pendulum.red }),
 						React.createElement("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect }),
 					),
+					React.createElement(
+						"div",
+						{ "className": "special" },
+						// Serves as a means
+						React.createElement("pre", null, "∞"),
+						React.createElement("pre", null, "☆"),
+						React.createElement("pre", null, "●")
+					)
 				)
 			);
 		},
