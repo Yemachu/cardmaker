@@ -12,7 +12,8 @@ define([
 	"./Link",
 	"./Circulation",
 	"./Copyright",
-], function ygo_template_all(CardName, Attribute, Border, Image, Level, Type, Effect, Atk, Def, Pendulum, Link, Circulation, Copyright)
+	"./LinkMarkers"
+], function ygo_template_all(CardName, Attribute, Border, Image, Level, Type, Effect, Atk, Def, Pendulum, Link, Circulation, Copyright, LinkMarkers)
 {
 	return {
 		CardName: CardName,
@@ -27,6 +28,7 @@ define([
 		Pendulum: Pendulum,
 		Link: Link,
 		Circulation: Circulation,
-		Copyright: Copyright
+		Copyright: Copyright,
+		LinkMarkers: LinkMarkers
 	};
 });
