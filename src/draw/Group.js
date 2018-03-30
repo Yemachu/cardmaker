@@ -34,7 +34,9 @@ define(["react", "react-class"], function Group(React, ReactClass)
 				if (canvas !== null)
 				{
 					var ctx = canvas.getContext("2d");
-					ctx.clearRect(0,0,canvas.width, canvas.height);
+					ctx.fillStyle = "#fff";
+					ctx.fillRect(0,0,canvas.width, canvas.height);
+					//ctx.clearRect(0,0,canvas.width, canvas.height);
 				}
 			}
 		},
