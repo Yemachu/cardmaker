@@ -78,52 +78,108 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					attributes[attributes.length] = React.createElement("option", { key: key }, key);
 				}
 			}
-			
-			return React.createElement(
+			var e = React.createElement;
+			return e(
 				"div",
 				{
 					className: "cardmaker ygo"
 				},
-				React.createElement(
+				e(
 					"div",
-					{ className: "container", onClick: function(){alert("Clicked");} },
-					React.createElement(Card, this.state.card)
+					{ className: "container" },
+					e(Card, this.state.card)
 				),
-				React.createElement(
+				e(
 					"div",
 					{ className: "editor" },
-					React.createElement("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name }),
-					React.createElement("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level }),
-					React.createElement("input", { onChange: this.updateField("card.type"), type: "text", value: this.state.card.type }),
-					React.createElement("textarea", { onChange: this.updateField("card.effect"), value: this.state.card.effect }),
-					React.createElement("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk }),
-					React.createElement("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def }),
-					React.createElement("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation }),
-					React.createElement("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright }),
-					React.createElement("input", { onChange: this.updateCardImage("image"), type: "file" }),
-					React.createElement("select", { onChange: this.updateField("card.attribute") }, attributes),
-					React.createElement("select",  { onChange: this.updateTemplate }, templates),
-					React.createElement(
+					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
+					e("label", null, "Level", e("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level })),
+					e("label", null, "Type",  e("input", { onChange: this.updateField("card.type"), type: "text", value: this.state.card.type })),
+					
+					e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.effect"), value: this.state.card.effect })),
+					
+					e("label", null, "Attack", e("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk })),
+					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
+					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation })),
+					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
+					e("label", null, "Image", e("input", { onChange: this.updateCardImage("image"), type: "file" })),
+					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute") }, attributes)),
+					e("label", null, "Template", e("select",  { onChange: this.updateTemplate }, templates)),
+					
+					e(
 						"fieldset",
 						null,
-						React.createElement(
+						e(
 							"legend",
 							null,
-							React.createElement("input", { id: "ccm_ygo:pendulum.enabled", onChange: function(e){this.updateField("card.pendulum.enabled")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.pendulum.enabled }),
-							React.createElement("label", { htmlFor: "ccm_ygo:pendulum.enabled"}, "Pendulum" )
+							e("input", { id: "ccm_ygo:pendulum.enabled", onChange: function(e){this.updateField("card.pendulum.enabled")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.pendulum.enabled }),
+							e("label", { htmlFor: "ccm_ygo:pendulum.enabled"}, "Pendulum" )
 						),
 						
-						React.createElement("input", { onChange: this.updateField("card.pendulum.blue"), type: "text", value: this.state.card.pendulum.blue }),
-						React.createElement("input", { onChange: this.updateField("card.pendulum.red"), type: "text", value: this.state.card.pendulum.red }),
-						React.createElement("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect }),
+						e("label", null, "Blue scale", e("input", { onChange: this.updateField("card.pendulum.blue"), type: "text", value: this.state.card.pendulum.blue })),
+						e("label", null, "Red scale", e("input", { onChange: this.updateField("card.pendulum.red"), type: "text", value: this.state.card.pendulum.red })),
+						e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect })),
 					),
-					React.createElement(
+					
+					e(
+						"fieldset",
+						null,
+						e(
+							"legend",
+							null,
+							"Link"
+						),
+						
+						e("table", null,e("tbody",null,
+							e("tr", null, 
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.topLeft", onChange: this.updateField("card.link.topleft"), type: "checkbox", value: this.state.card.link.topLeft }),
+									e("label", { htmlFor: "ccm_ygo:link.topLeft"}, "")
+								),
+								e("td", null,	
+									e("input", { id: "ccm_ygo:link.topCenter", onChange: this.updateField("card.link.topCenter"), type: "checkbox", value: this.state.card.link.topCenter }),
+									e("label", { htmlFor: "ccm_ygo:link.topCenter"}, "" )
+								),
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.topRight", onChange: this.updateField("card.link.topRight"), type: "checkbox", value: this.state.card.link.topRight }),
+									e("label", { htmlFor: "ccm_ygo:link.topRight"}, "" ),
+								)
+							),
+							e("tr", null, 
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.middleLeft", onChange: this.updateField("card.link.middleLeft"), type: "checkbox", value: this.state.card.link.middleLeft }),
+									e("label", { htmlFor: "ccm_ygo:link.middleLeft"}, "")
+								),
+								e("td"),
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.middleRight", onChange: this.updateField("card.link.middleRight"), type: "checkbox", value: this.state.card.link.middleRight }),
+									e("label", { htmlFor: "ccm_ygo:link.middleRight"}, "" ),
+								)
+							),
+							e("tr", null, 
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.bottomLeft", onChange: this.updateField("card.link.bottomLeft"), type: "checkbox", value: this.state.card.link.bottomLeft }),
+									e("label", { htmlFor: "ccm_ygo:link.bottomLeft"}, "")
+								),
+								e("td", null,	
+									e("input", { id: "ccm_ygo:link.bottomCenter", onChange: this.updateField("card.link.bottomCenter"), type: "checkbox", value: this.state.card.link.bottomCenter }),
+									e("label", { htmlFor: "ccm_ygo:link.bottomCenter"}, "" )
+								),
+								e("td", null,
+									e("input", { id: "ccm_ygo:link.bottomRight", onChange: this.updateField("card.link.bottomRight"), type: "checkbox", value: this.state.card.link.bottomRight }),
+									e("label", { htmlFor: "ccm_ygo:link.bottomRight"}, "" ),
+								)
+							)
+						))
+					),
+					
+					e(
 						"div",
 						{ "className": "special" },
 						// Serves as a means
-						React.createElement("pre", null, "∞"),
-						React.createElement("pre", null, "☆"),
-						React.createElement("pre", null, "●")
+						e("pre", null, "∞"),
+						e("pre", null, "☆"),
+						e("pre", null, "●")
 					)
 				)
 			);
