@@ -11,6 +11,8 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Link(
 				React.createElement(C.CardName, { value: this.props.name, color: "white" }),
 				React.createElement(C.Attribute, { value: this.props.attribute }),
 				
+				React.createElement(C.LinkMarkers, this.props.link ),
+				
 				React.createElement(C.Type, { value: this.props.type }),
 				React.createElement(C.Effect, { value: this.props.effect }),
 				React.createElement(C.Atk, { value: this.props.atk }),
