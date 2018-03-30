@@ -23,7 +23,7 @@
 			html.classList.add("js");
 			// Allow the user to select a theme.
 			var themes = /[\?&]theme=([^&#]*)/.exec(window.location.href);
-			if (themes){ html.classList.add(decodeURI(themes[1])); }
+			if (themes){ html.classList.add(decodeURI(themes[1]).toLowerCase()); }
 		})();
 		</script>
 	</head>
