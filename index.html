@@ -21,12 +21,17 @@
 	</head>
 	
 	<body lang="en">
-		<div id="react-root" class="js-yes">
-			Waiting for JavaScript to load.
-		</div>
-		<div class="js-no">
-			JavaScript seems to be disabled.
-		</div>
+		<header>
+			<h1>Neo New Card maker</h1>
+		</header>
+		<article class="content">
+			<div id="react-root" class="js-yes">
+				Waiting for JavaScript to load.
+			</div>
+			<div class="js-no">
+				JavaScript seems to be unavailable.
+			</div>
+		</article>
 		<script src="src/config.js"></script>
 		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="src/main"></script>
 		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
