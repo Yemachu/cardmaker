@@ -1,4 +1,4 @@
-define(["react", "react-class", "draw/Text"], function Def(React, ReactClass, Text)
+define(["react", "react-class", "draw/Text"], function Link(React, ReactClass, Text)
 {
 	var style = {
 		fontFamily: ["Audiowide", "sans-serif"],
@@ -12,16 +12,16 @@ define(["react", "react-class", "draw/Text"], function Def(React, ReactClass, Te
 		height: undefined
 	};
 	
-	var Def = ReactClass({
+	var Link = ReactClass({
 		render: function render()
 		{
 			return React.createElement(Text, { text: this.props.value, style: style, repaint: this.props.repaint, canvas: this.props.canvas })
 		}
 	});
 	
-	Def.displayName = "Def";
-	Def.defaultProps = {
-		type: "Regular"
+	Link.displayName = "Link";
+	Link.defaultProps = {
+		
 	}
-	return Def;
+	return Link;
 });
