@@ -6,6 +6,7 @@
 		
 		<title>Custom card maker</title>
 		<link rel="stylesheet" type="text/css" href="css/Style.css" />
+		<link rel="stylesheet" type="text/css" href="css/Dusk-Theme.css" />
 		
 		<style>
 			/** Hide parts of the site based on whether JavaScript is available. */
@@ -15,8 +16,15 @@
 			.js .js-no { display: none; }
 		</style>
 		<script>
+		// Function which prevents the 
+		(function(){
+			var html = document.getElementsByTagName("html")[0];
 			// Notify the html tag that JavaScript is available.
-			document.getElementsByTagName("html")[0].classList.add("js")
+			html.classList.add("js");
+			// Allow the user to select a theme.
+			var themes = /[\?&]theme=([^&#]*)/.exec(window.location.href);
+			html.classList.add(themes && themes[1]);
+		})();
 		</script>
 	</head>
 	

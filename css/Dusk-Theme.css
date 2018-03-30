@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/******************************************************************************/
+/* A dark color theme for websites.                                           */
+/*                                                                            */
+/* It consists of dark shades of grey, and uses amber as a color for accents. */
+/******************************************************************************/
+.dusk body
+{
+	background-color: #303030;
+	color: #fff; /* fallback in case rgba() doesn't work. */
+	color: rgba(255,255,255, 0.7);
+	/* Default font on most browsers is serif, which looks somewhat dated. */
+	font-family: sans-serif;
+}
+
+/* Make the selection the accent color, and maintain contrast. */
+.dusk ::selection { color: #000; background-color: #FFC107; }
+.dusk ::-moz-selection { color: #000; background-color: #FFC107;  }
+/******************************************************************************/
+
+/******************************************************************************/
+.dusk fieldset
+{
+	/* Make the border slightly more sublte. */
+	border: solid thin #212121;
+	margin-bottom: 0.5em;
+}
+
+/******************************************************************************/
+/* General styling for labels and inputs.                                     */
+/******************************************************************************/
+.dusk label
+{
+	/* Put each label on its own line. */
+	display: block;
+}
+
+.dusk input,
+.dusk textarea,
+.dusk select
+{
+	/* Put each input on its own line, giving it full width. Its parent is */
+	/* responsible for constraining its size. */
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	
+	/* Let the styling on the rest of the page affect input elements as well. */
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	
+	/* No need for a border due to background color and drop shadow. */
+	border: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	/* The border tend to become somewhat snug by default. Add some space. */
+	padding: 0.5em;
+	
+	/* Add some space between the label and next element. */
+	margin-top: 0.25em;
+	margin-bottom: 1em;
+}
+
+.dusk input:focus,
+.dusk textarea:focus
+{
+	/* Provide some feedback as to which element has focus. */
+	/* The label should be closer to the object to which it applies. */
+	outline: solid medium #FFC107;
+}
+
+/******************************************************************************/
+/* Styling for text related elements.                                         */
+/******************************************************************************/
+.dusk input[type="text"],
+.dusk input[type="number"],
+/* TODO: Add more text styles like email. */
+.dusk textarea
+{
+	/* Slightly darker than the background to catch the eye. */
+	background-color: #212121;
+	/* Shadow to suggest depth. */
+	box-shadow: inset 0 1px 2px #000;
+	
+	/* Default appearance for the element might not look too great. */
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+.dusk textarea
+{
+	/* Textareas typically contain more text, so it should be taller. */
+	height: 5em;
+	/* Keep the width of the elements consistent, but allow for resizing. */
+	resize: vertical;
+}
+
+/******************************************************************************/
+/* Styling for Checkboxes.                                                    */
+/*                                                                            */
+/* Checkboxes typically appear in front of the label. Assuming that label is  */
+/* the last element in the child of its parent, it can be inferred it belongs */
+/* to the checkbox, so it can be styled instead, as it has more options.      */
+/******************************************************************************/
+
+.dusk input[type="checkbox"]
+{
+	/* Can hardly be styled, so use the label instead.*/
+	display: none;
+}
+
+.dusk input[type="checkbox"] + label:last-child::before
+{
+		/* Required to make the pseudo-element show up. */
+		content: "";
+		/* Place the checkbox at the same line as the text. */
+		display: inline-block;
+		/* The size should match the text to some degree. */
+		height: 1em;
+		width: 1em;
+		/* Some space between the icon and text. */
+		margin-right: 0.25em;
+		vertical-align: baseline;
+		/* A checkbox typically isn't a pattern. */
+		background-repeat: no-repeat;
+		/* Scale the image up or down based on the font size. */
+		background-size: contain;
+		background-image: url(../res/ui/dark/checkbox.svg);
+}
+
+.dusk input[type="checkbox"]:checked + label:last-child::before
+{
+	/* Give the user feedback that it has been checked. */
+	background-image: url(../res/ui/dark/checkbox-checked.svg);
+}
+
+
+/******************************************************************************/
+/* Styling for Selections.                                                    */
+/*                                                                            */
+/* Checkboxes typically appear in front of the label. Assuming that label is  */
+/* the last element in the child of its parent, it can be inferred it belongs */
+/* to the checkbox, so it can be styled instead, as it has more options.      */
+/******************************************************************************/
+.dusk select
+{
+	background-color: #212121;
+	box-shadow: 0 1px 2px #000;
+	
+	/* Draw a custom arrow on the select element. */
+	background-image: url(../res/ui/dark/select-arrow.svg);
+	background-position: right;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
