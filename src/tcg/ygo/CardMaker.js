@@ -101,7 +101,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation })),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
-					e("label", null, "Image", e("input", { onChange: this.updateCardImage("image"), type: "file" })),
+					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
 					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute") }, attributes)),
 					e("label", null, "Template", e("select",  { onChange: this.updateTemplate }, templates)),
 					
@@ -123,12 +123,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e(
 						"fieldset",
 						null,
-						e(
-							"legend",
-							null,
-							"Link"
-						),
-						
+						e("legend", null, "Link"),
 						e("table", null,e("tbody",null,
 							e("tr", null, 
 								e("td", null,
