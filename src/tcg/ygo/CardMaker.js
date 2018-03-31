@@ -22,10 +22,10 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				card:
 				{
 					name: "Neo New Card Maker",
-					level: 7,
-					type: "Cyberse / Pendulum / Effect",
+					level: 4,
+					type: "Cyberse / Pendulum",
 					effect: "A card maker that supports the creation of Normal, Effect, Ritual, Fusion, Synchro, Dark Synchro, Xyz and Link monsters. It also provides support for creating Pendulum versions of some card types.",
-					atk: "3000",
+					atk: "0",
 					def: "0",
 					circulation: "This card cannot be used in a Duel.",
 					copyright: "© 1993 YEMACHU",
@@ -34,8 +34,8 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					{
 						enabled: true,
 						effect: "",
-						blue: "0",
-						red: "13"
+						blue: "5",
+						red: "5"
 					},
 					link: 
 					{
@@ -44,9 +44,9 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						topRight: false,
 						middleLeft: false,
 						middleRight: false,
-						bottomLeft: true,
+						bottomLeft: false,
 						bottomCenter: false,
-						bottomRight: true,
+						bottomRight: false,
 					},
 					layout: Card.Layout.Normal
 				}
