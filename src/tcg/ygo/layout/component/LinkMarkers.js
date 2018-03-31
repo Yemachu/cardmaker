@@ -19,6 +19,18 @@ define(["react", "react-class", "draw/Group", "draw/Image"], function LinkMarker
 			width: 42,
 			height: 42
 		},
+		middleLeft: {
+			top: 235,
+			left: 26,
+			width: 25,
+			height: 72
+		},
+		middleRight: {
+			top: 235,
+			left: 420 - 26 -25,
+			width: 25,
+			height: 72
+		},
 		bottomLeft: { 
 			top: 402,
 			left: 32,
@@ -26,7 +38,7 @@ define(["react", "react-class", "draw/Group", "draw/Image"], function LinkMarker
 			height: 42
 		},
 		bottomCenter: {
-			top: 86,
+			top: 428,
 			left:(420/2) - (72/2),
 			width:72,
 			height: 25
@@ -39,7 +51,7 @@ define(["react", "react-class", "draw/Group", "draw/Image"], function LinkMarker
 		}
 	};
 	
-	var path = "res/tcg/ygo/marker/";
+	var path = "res/tcg/ygo/marker";
 	var LinkMarkers = ReactClass({
 		render: function render()
 		{
