@@ -92,7 +92,12 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					"div",
 					{ className: "editor" },
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
+					e("label", null, "Template", e("select",  { onChange: this.updateTemplate }, templates)),
+					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute") }, attributes)),
 					e("label", null, "Level", e("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level })),
+					
+					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
+					
 					e("label", null, "Type",  e("input", { onChange: this.updateField("card.type"), type: "text", value: this.state.card.type })),
 					
 					e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.effect"), value: this.state.card.effect })),
@@ -101,9 +106,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation })),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
-					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
-					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute") }, attributes)),
-					e("label", null, "Template", e("select",  { onChange: this.updateTemplate }, templates)),
+					
 					
 					e(
 						"fieldset",
