@@ -46,6 +46,11 @@ body > article
 	bottom: 0;
 }
 
+input, textarea, label, select
+{
+	display: block;
+}
+
 .editor, .live-preview
 {
 		position: absolute;
