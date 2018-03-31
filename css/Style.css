@@ -1,60 +1,93 @@
-.card.ygo
+@charset "UTF-8";
+
+html, body
 {
-	display: block;
-	max-width: 100%;
-	margin: 0 auto;
-	box-shadow: 0 2px 4px #000;
+	/* Make absolute postioning take the full height. */
+	height: 100%;
 }
 
 body
 {
-	background-color: #cde;
+	/* Remove the default spacing around the page.*/
+	padding: 0;
+	margin: 0;
 }
 
 *
 {
 	box-sizing: border-box;
 }
-input, textarea, select
+
+body > header,
+body > article,
+body > footer
 {
-	display: block;
+	position: absolute;
+	padding: 0.5em;
+	left: 0;
+	right: 0;
 }
-.container
+
+body > header
 {
-	float: left;
-	width: 50%;
-	max-height: 100%;
-	padding: 10px;
-	background-color: rgba(0,0,10, 0.2);
-	border-radius: 5px;
-	box-shadow: inset 0 2px 4px #000;
-	overflow: hidden;
-	perspective: 1000px;
+	top: 0;
+	height: 3em;
+}
+
+body > header > h1
+{
+	margin: 0;
+	font-size: 2em;
+}
+
+body > article
+{
+	top: 3em;
+	bottom: 0;
+}
+
+.editor, .live-preview
+{
+		position: absolute;
+		padding: 10px;
+		top:0;
+		bottom: 0;
+		width: 50%;
 }
 
 .editor
 {
-	float: left;
-	width: 50%;
-	padding: 10px;
+	left: 50%;
+	overflow: auto;
+}
+.live-preview
+{
+	left: 0;
+	top:0;
+	overflow: hidden;
+}
+
+.live-preview canvas,
+.live-preview image
+{
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		box-shadow: 0 2px 4px #000;
 }
 
 
 @media (max-width: 12cm)
 {
-	.container,
+	.live-preview,
 	.editor
 	{
 		width: 100%;
+		height: 50%;
+		left: 0;
 	}
-}
-
-.special pre
-{
-	box-shadow: inset 0 1px 2px;
-	border-radius: 2px;
-	background-color: rgba(0,0,10, 0.2);
-	font-size: 2em;
-	display: inline-block;
-	padding: 10px;
+	
+	.editor { top: 50%; }
+	.live-preview { top:0; }
 }

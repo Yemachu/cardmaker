@@ -85,7 +85,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				},
 				e(
 					"div",
-					{ className: "container" },
+					{ className: "live-preview" },
 					e(Card, this.state.card)
 				),
 				e(
@@ -167,14 +167,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						))
 					),
 					
-					e(
-						"div",
-						{ "className": "special" },
-						// Serves as a means
-						e("pre", null, "∞"),
-						e("pre", null, "☆"),
-						e("pre", null, "●")
-					)
+					e("pre", { "className": "special" }, "∞\n", "☆\n", "●\n")
 				)
 			);
 		},
