@@ -11,13 +11,13 @@ define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "
 					className: "ygo card"
 				},
 				React.createElement(
-					this.props.layout,
+					Layouts[this.props.layout],
 					this.props,
 				)
 			);
 		}
 	});
-	Card.defaultProps = { layout: Layouts.Normal };
+	Card.defaultProps = { layout: "Normal" };
 	Card.displayName = "Card";
 	Card.Layout = Layouts;
 	Card.Attributes = Attributes;
