@@ -1,6 +1,6 @@
-define(["react", "react-class", "draw/Text"], function Circulation(React, ReactClass, Text)
+define(["react", "react-class", "draw/Text"], function Serial(React, ReactClass, Text)
 {
-	var Circulation = ReactClass({
+	var Serial = ReactClass({
 		render: function render()
 		{
 			return React.createElement(Text, { text: this.props.value, style: {
@@ -16,9 +16,9 @@ define(["react", "react-class", "draw/Text"], function Circulation(React, ReactC
 			}, canvas: this.props.canvas, repaint: this.props.repaint })
 		}
 	});
-	Circulation.displayName = "Circulation";
-	Circulation.defaultProps = {
+	Serial.displayName = "Serial";
+	Serial.defaultProps = {
 		value: "",
 	};
-	return Circulation;
+	return Serial;
 });

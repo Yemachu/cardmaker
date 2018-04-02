@@ -19,7 +19,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Link(
 				// Recycle the DEF value as it shouldn't appear at the same time.
 				React.createElement(C.Link, { value: this.props.def }),
 				
-				React.createElement(C.Circulation, { value: this.props.circulation }),
+				React.createElement(C.Serial, { value: this.props.serial }),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 			

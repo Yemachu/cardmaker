@@ -19,7 +19,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Xyz(R
 				React.createElement(C.Atk, { value: this.props.atk }),
 				React.createElement(C.Def, { value: this.props.def }),
 				
-				React.createElement(C.Circulation, { value: this.props.circulation }),
+				React.createElement(C.Serial, { value: this.props.serial }),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 		}

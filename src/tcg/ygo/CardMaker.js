@@ -21,13 +21,14 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 			return {
 				card:
 				{
+					version: "1.0.0",
 					name: "Neo New Card Maker",
 					level: 4,
 					type: "Cyberse / Pendulum",
 					effect: "A card maker that supports the creation of Normal, Effect, Ritual, Fusion, Synchro, Dark Synchro, Xyz and Link monsters. It also provides support for creating Pendulum versions of some card types.",
 					atk: "0",
 					def: "0",
-					circulation: "This card cannot be used in a Duel.",
+					serial: "This card cannot be used in a Duel.",
 					copyright: "© 1993 YEMACHU",
 					attribute: "None",
 					pendulum: 
@@ -104,7 +105,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					
 					e("label", null, "Attack", e("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk })),
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
-					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.circulation"), type: "text", value: this.state.card.circulation })),
+					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.serial"), type: "text", value: this.state.card.serial })),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
 					
 					

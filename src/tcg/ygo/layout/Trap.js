@@ -14,7 +14,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Trap(
 				React.createElement(C.Type, { value: this.props.type, type: "Backrow" }),
 				React.createElement(C.Effect, { value: this.props.effect, type: "Backrow" }),
 				
-				React.createElement(C.Circulation, { value: this.props.circulation }),
+				React.createElement(C.Serial, { value: this.props.serial }),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 		}
