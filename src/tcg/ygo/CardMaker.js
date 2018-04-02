@@ -4,21 +4,15 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		
 		getInitialState: function initialState()
 		{
-			WebFont.load({
-				google: { 
-					families: [
-						"Buenard", 
-						"Spectral SC:semi-bold,extra-bold", 
-						"Amiri:italic", 
-						"Audiowide", 
-						"Crimson Text:bold"
-					] 
-				},
-				fontactive: function(){this.forceUpdate();}.bind(this)
-			});
+		// Custom card maker state.
+			var saveDataKey = "ccms";
+			window.addEventListener("beforeunload", function(e){
+				localStorage.setItem(saveDataKey, JSON.stringify(this.state));
+			}.bind(this));
 			
-			
-			return {
+			var savedata = JSON.parse(localStorage.getItem(saveDataKey));
+			console.log(savedata);
+			var defaultdata = {
 				card:
 				{
 					version: "1.0.0",
@@ -52,6 +46,22 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					layout: Card.Layout.Normal
 				}
 			};
+			
+			WebFont.load({
+				google: { 
+					families: [
+						"Buenard", 
+						"Spectral SC:semi-bold,extra-bold", 
+						"Amiri:italic", 
+						"Audiowide", 
+						"Crimson Text:bold"
+					] 
+				},
+				fontactive: function(){this.forceUpdate();}.bind(this)
+			});
+			
+			
+			return Object.assign({}, defaultdata, savedata);
 		},
 		
 		render: function render()
