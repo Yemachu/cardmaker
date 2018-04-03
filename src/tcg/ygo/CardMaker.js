@@ -1,5 +1,37 @@
 define(["react", "react-class", "./Card", "webfont"], function App(React, ReactClass, Card, WebFont)
 {
+	var emptyCard = {
+		version: "1.0.0",
+		name: "",
+		level: 0,
+		type: "",
+		effect: "",
+		atk: "",
+		def: "",
+		serial: "This card cannot be used in a Duel.",
+		copyright: "© 1993 YEMACHU",
+		attribute: "None",
+		pendulum: 
+		{
+			enabled: false,
+			effect: "",
+			blue: "5",
+			red: "5"
+		},
+		link: 
+		{
+			topLeft: false,
+			topCenter: false,
+			topRight: false,
+			middleLeft: false,
+			middleRight: false,
+			bottomLeft: false,
+			bottomCenter: false,
+			bottomRight: false,
+		},
+		layout: "Normal"
+	}
+	
 	return ReactClass({
 		
 		getInitialState: function initialState()
@@ -176,9 +208,72 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						))
 					),
 					
+					e("button", { onClick: this.create}, "New"),
+					e("button", { onClick: this.save }, "Save"),
+					e("button", { onClick: this.open }, "Open"),
+					
 					e("pre", { "className": "special" }, "∞\n", "☆\n", "●\n")
 				)
 			);
+		},
+		create: function create()
+		{
+			this.setState({ card: emptyCard });
+		},
+		
+		save: function save()
+		{
+			var link = document.createElement("a");
+			link.setAttribute("href", "data:/text/plain;charset=utf-8," + encodeURIComponent(JSON.stringify(this.state.card)));
+			link.setAttribute("download", (this.state.card.name || "Card") + ".json");
+			if (document.createEvent)
+			{
+				var evt = document.createEvent("MouseEvent");
+				evt.initEvent("click", true, true);
+				link.dispatchEvent(evt);
+			}
+			else
+			{
+				link.click();
+			}
+		},
+		
+		open: function()
+		{
+			var file = document.createElement("input");
+			file.setAttribute("type", "file");
+			file.setAttribute("accept", ".json");
+			file.addEventListener("change", function(evt)
+			{
+				var files = evt.target.files;
+				if (FileReader && files.length)
+				{
+					var fr = new FileReader();
+					fr.onload = function()
+					{
+						try
+						{
+							var card = JSON.parse(fr.result);
+							console.log(card);
+							this.setState({ card: card });
+						}catch(e)
+						{
+							console.error(e);
+						}
+					}.bind(this);
+					fr.readAsText(files[0]);
+				}
+			}.bind(this));
+			if (document.createEvent)
+			{
+				var evt = document.createEvent("MouseEvent");
+				evt.initEvent("click", true, true);
+				file.dispatchEvent(evt);
+			}
+			else
+			{
+				link.click();
+			}
 		},
 		
 		updateField: function updateField(fieldName)
