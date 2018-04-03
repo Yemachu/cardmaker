@@ -98,8 +98,8 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					"div",
 					{ className: "editor" },
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
-					e("label", null, "Template", e("select",  { onChange: this.updateField("card.layout") }, templates)),
-					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute") }, attributes)),
+					e("label", null, "Template", e("select",  { onChange: this.updateField("card.layout"), value: this.state.card.layout }, templates)),
+					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute"), value: this.state.card.attribute }, attributes)),
 					e("label", null, "Level", e("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level })),
 					
 					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
