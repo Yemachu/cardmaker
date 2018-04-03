@@ -110,6 +110,31 @@
 }
 
 /******************************************************************************/
+
+/******************************************************************************/
+
+.dusk button
+{
+	color: inherit;
+	display: inline-block;
+	background-color: #212121;
+	box-shadow: 0 1px 2px #000;
+	padding: 10px;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+.dusk button:hover
+{
+	
+}
+.dusk button:active
+{
+	
+}
+
+/******************************************************************************/
 /* Styling for Checkboxes.                                                    */
 /*                                                                            */
 /* Checkboxes typically appear in front of the label. Assuming that label is  */
