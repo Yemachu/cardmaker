@@ -4,7 +4,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 		Monster: {
 			fontFamily: ["Buenard", "serif"],
 			
-			fontSize: 12,
+			fontSize: 13,
 			textAlign: "justify",
 			
 			left: 35,
@@ -13,21 +13,21 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 			height: 80
 		},
 		Backrow: {
-				fontFamily: ["Buenard", "serif"],
-				
-				fontSize: 12,
-				textAlign: "justify",
-				
-				left: 35,
-				top: 460,
-				width: 350,
-				height: 110
+			fontFamily: ["Buenard", "serif"],
+			
+			fontSize: 13,
+			textAlign: "justify",
+			
+			left: 35,
+			top: 460,
+			width: 350,
+			height: 110
 		},
 		Vanilla: {
 			fontFamily: ["Amiri", "serif"],
 			fontStyle: "italic",
 			
-			fontSize: 12,
+			fontSize: 13,
 			textAlign: "justify",
 			
 			left: 35,

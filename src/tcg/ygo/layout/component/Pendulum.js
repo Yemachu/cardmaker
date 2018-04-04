@@ -13,7 +13,7 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 						style: {
 							fontFamily: ["Buenard", "serif"],
 						
-							fontSize: 12,
+							fontSize: 13,
 							textAlign: "justify",
 						
 							left: 65,
