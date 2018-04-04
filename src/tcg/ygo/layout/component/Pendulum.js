@@ -28,9 +28,10 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 					{
 						text: this.props.blue,
 						style: {
-							fontFamily: ["Buenard", "serif"],
+							fontFamily: ["Crimson Text", "serif"],
 							fontSize: 28,
 							textAlign: "center",
+							fontWeight: 600,
 						
 							left: 32,
 							top: 410,
@@ -44,9 +45,10 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 					{
 						text: this.props.red,
 						style: {
-							fontFamily: ["Buenard", "serif"],
+							fontFamily: ["Crimson Text", "serif"],
 							fontSize: 28,
 							textAlign: "center",
+							fontWeight: 600,
 							
 							left: 365,
 							top: 410,

@@ -2,12 +2,13 @@ define(["react", "react-class", "draw/Text"], function Def(React, ReactClass, Te
 {
 	var style = {
 		fontFamily: ["Crimson Text", "serif"],
-		fontSize: 16,
+		fontSize: 18,
 		textAlign: "right",
 		whitespace: "nowrap",
+		fontWeight: 600,
 		
 		left: 345,
-		top: 552,
+		top: 551,
 		width: 40,
 		height: undefined
 	};

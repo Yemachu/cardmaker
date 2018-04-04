@@ -86,7 +86,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						"Spectral SC:semi-bold,extra-bold", 
 						"Amiri:italic", 
 						"Audiowide", 
-						"Crimson Text:bold"
+						"Crimson Text:semi-bold,bold"
 					] 
 				},
 				fontactive: function(){this.forceUpdate();}.bind(this)
