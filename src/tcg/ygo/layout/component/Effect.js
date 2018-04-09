@@ -10,7 +10,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 			left: 35,
 			top: 475,
 			width: 350,
-			height: 80
+			height: 75
 		},
 		Backrow: {
 			fontFamily: ["Buenard", "serif"],
@@ -33,7 +33,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 			left: 35,
 			top: 475,
 			width: 350,
-			height: 80
+			height: 75
 		}
 	}
 	
