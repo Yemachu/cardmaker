@@ -97,6 +97,7 @@ define(["react", "react-class", "draw/Group", "draw/Image", "draw/Text", "../../
 					}
 				);
 			}
+			return null;
 		}
 	});
 	Type.displayName = "Circulation";
