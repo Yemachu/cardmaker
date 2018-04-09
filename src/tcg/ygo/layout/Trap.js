@@ -11,7 +11,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Trap(
 				React.createElement(C.CardName, { value: this.props.name, color: "white" }),
 				React.createElement(C.Attribute, { value: this.props.attribute }),
 				
-				React.createElement(C.Type, { value: this.props.type, type: "Backrow" }),
+				React.createElement(C.Type, { value: this.props.type, type: "Backrow", icon: this.props.icon }),
 				React.createElement(C.Effect, { value: this.props.effect, type: "Backrow" }),
 				
 				React.createElement(C.Serial, { value: this.props.serial }),

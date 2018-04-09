@@ -51,6 +51,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					name: "Neo New Card Maker",
 					level: 4,
 					type: "Cyberse / Pendulum",
+					icon: "None",
 					effect: "A card maker that supports the creation of Normal, Effect, Ritual, Fusion, Synchro, Dark Synchro, Xyz and Link monsters. It also provides support for creating Pendulum versions of some card types.",
 					atk: "0",
 					def: "0",
@@ -115,6 +116,15 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					attributes[attributes.length] = React.createElement("option", { key: key }, key);
 				}
 			}
+			var icons = [];
+			for(var key in Card.Icons)
+			{
+				if(Card.Icons.hasOwnProperty(key))
+				{
+					icons[icons.length] = React.createElement("option", { key: key }, key);
+				}
+			}
+			
 			var e = React.createElement;
 			return e(
 				"div",
@@ -137,7 +147,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
 					
 					e("label", null, "Type",  e("input", { onChange: this.updateField("card.type"), type: "text", value: this.state.card.type })),
-					
+					e("label", null, "Icon", e("select", { onChange: this.updateField("card.icon"), value: this.state.card.icon }, icons)),
 					e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.effect"), value: this.state.card.effect })),
 					
 					e("label", null, "Attack", e("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk })),

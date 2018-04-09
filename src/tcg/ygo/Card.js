@@ -1,4 +1,4 @@
-define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "./Stars"], function App(React, ReactClass, Canvas, Layouts, Attributes, Stars)
+define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "./Stars", "./Icons"], function App(React, ReactClass, Canvas, Layouts, Attributes, Stars, Icons)
 {
 	var Card = ReactClass({
 		render: function render()
@@ -22,5 +22,6 @@ define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "
 	Card.Layout = Layouts;
 	Card.Attributes = Attributes;
 	Card.Stars = Stars;
+	Card.Icons = Icons;
 	return Card;
 });
