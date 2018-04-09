@@ -19,8 +19,8 @@ define(["react", "react-class", "draw/Group", "./component/All"], function DarkS
 				React.createElement(C.Atk, { value: this.props.atk }),
 				React.createElement(C.Def, { value: this.props.def }),
 				
-				React.createElement(C.Serial, { value: this.props.serial }),
-				React.createElement(C.Copyright, { value: this.props.copyright })
+				React.createElement(C.Serial, { value: this.props.serial, color: this.props.pendulum.enabled ? undefined : "white" }),
+				React.createElement(C.Copyright, { value: this.props.copyright, color: this.props.pendulum.enabled ? undefined : "white" })
 			);
 		}
 	});

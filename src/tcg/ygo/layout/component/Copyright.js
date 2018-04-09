@@ -5,6 +5,7 @@ define(["react", "react-class", "draw/Text"], function Copyright(React, ReactCla
 		{
 			return React.createElement(Text, { text: this.props.value, style: {
 				fontFamily: ["Buenard", "serif"],
+				color: this.props.color,
 				fontSize: 12,
 				textAlign: "right",
 				whitespace: "nowrap",
@@ -19,6 +20,7 @@ define(["react", "react-class", "draw/Text"], function Copyright(React, ReactCla
 	Copyright.displayName = "Copyright";
 	Copyright.defaultProps = {
 		value: "",
+		color: "black"
 	};
 	return Copyright;
 });

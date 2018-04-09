@@ -5,6 +5,7 @@ define(["react", "react-class", "draw/Text"], function Serial(React, ReactClass,
 		{
 			return React.createElement(Text, { text: this.props.value, style: {
 				fontFamily: ["Buenard", "serif"],
+				color: this.props.color,
 				fontSize: 12,
 				textAlign: "left",
 				whitespace: "nowrap",
@@ -19,6 +20,7 @@ define(["react", "react-class", "draw/Text"], function Serial(React, ReactClass,
 	Serial.displayName = "Serial";
 	Serial.defaultProps = {
 		value: "",
+		color: "black"
 	};
 	return Serial;
 });
