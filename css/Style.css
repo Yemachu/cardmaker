@@ -26,6 +26,7 @@ body > footer
 	padding: 0.5em;
 	left: 0;
 	right: 0;
+	overflow: hidden;
 }
 
 body > header
@@ -38,6 +39,7 @@ body > header > h1
 {
 	margin: 0;
 	font-size: 2em;
+	white-space: nowrap;
 }
 
 body > article
