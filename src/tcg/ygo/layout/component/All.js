@@ -19,7 +19,7 @@ define([
 		CardName: CardName,
 		Attribute: Attribute,
 		Border: Border,
-		Image, Image,
+		Image: Image,
 		Level: Level,
 		Type: Type,
 		Effect: Effect,

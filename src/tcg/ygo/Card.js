@@ -12,7 +12,7 @@ define(["react", "react-class", "draw/Canvas", "./layout/All", "./Attributes", "
 				},
 				React.createElement(
 					Layouts[this.props.layout],
-					this.props,
+					this.props
 				)
 			);
 		}

@@ -36,7 +36,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 			this.props.repaint();
 		},
 		
-		componentDidUpdate()
+		componentDidUpdate: function()
 		{
 			var canvas = this.props.canvas;
 			// Make sure the image has downloaded.

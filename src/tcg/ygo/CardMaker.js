@@ -168,7 +168,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						
 						e("label", null, "Blue scale", e("input", { onChange: this.updateField("card.pendulum.blue"), type: "text", value: this.state.card.pendulum.blue })),
 						e("label", null, "Red scale", e("input", { onChange: this.updateField("card.pendulum.red"), type: "text", value: this.state.card.pendulum.red })),
-						e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect })),
+						e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect }))
 					),
 					
 					e(
@@ -187,7 +187,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 								),
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.topRight", onChange: function(e){this.updateField("card.link.topRight")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.topRight }),
-									e("label", { htmlFor: "ccm_ygo:link.topRight"}, "" ),
+									e("label", { htmlFor: "ccm_ygo:link.topRight"}, "" )
 								)
 							),
 							e("tr", null, 
@@ -198,7 +198,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 								e("td"),
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.middleRight", onChange: function(e){this.updateField("card.link.middleRight")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.middleRight }),
-									e("label", { htmlFor: "ccm_ygo:link.middleRight"}, "" ),
+									e("label", { htmlFor: "ccm_ygo:link.middleRight"}, "" )
 								)
 							),
 							e("tr", null, 
@@ -212,7 +212,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 								),
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.bottomRight", onChange: function(e){this.updateField("card.link.bottomRight")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.bottomRight }),
-									e("label", { htmlFor: "ccm_ygo:link.bottomRight"}, "" ),
+									e("label", { htmlFor: "ccm_ygo:link.bottomRight"}, "" )
 								)
 							)
 						))
