@@ -18,8 +18,18 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			)
 		},
 		
+		componentDidMount: function didMount()
+		{
+			this.draw();
+		},
+		
 		// Canvas won't be available on the first cycle anyway, so use "update".
 		componentDidUpdate: function didUpdate()
+		{
+			this.draw();
+		},
+		
+		draw: function render()
 		{
 			var canvas = this.props.canvas;
 			// Make sure the image has downloaded.
