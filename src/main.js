@@ -10,7 +10,7 @@
 		root.innerText = "Loading failed";
 	};
 	
-	define(["react", "react-dom", "App"],function main(React, ReactDOM, App)
+	require(["react", "react-dom", "App"],function main(React, ReactDOM, App)
 	{
 		// Start the application.
 		ReactDOM.render(React.createElement(App), root);
