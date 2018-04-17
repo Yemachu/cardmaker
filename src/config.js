@@ -5,9 +5,19 @@
  */
 var require = {
 	paths: {
-		"webfont": ["https://unpkg.com/webfontloader@1.6.28/webfontloader", "lib/webfont/webfontloader.js"],
-		"react": ["https://unpkg.com/react@16/umd/react.development"],
-		"react-dom": ["https://unpkg.com/react-dom@16/umd/react-dom.development"],
-		"react-class": ["https://unpkg.com/create-react-class@15.6.3/create-react-class.min"]
+		"webfont": ["https://unpkg.com/webfontloader@1.6.28/webfontloader", "../lib/webfont/webfontloader"],
+		"react": [
+			typeof DEVELOP !== "undefined"
+				? "https://unpkg.com/react@16/umd/react.development"
+				: "https://unpkg.com/react@16/umd/react.production.min"
+		],
+		"react-dom": [
+			typeof DEVELOP !== "undefined"
+				? "https://unpkg.com/react-dom@16/umd/react-dom.development"
+				: "https://unpkg.com/react-dom@16/umd/react-dom.production.min"
+		],
+		"react-class": [
+			"https://unpkg.com/create-react-class@15.6.3/create-react-class.min"
+		]
 	}
 }
