@@ -16,7 +16,7 @@
 			.js .js-no { display: none; }
 		</style>
 		<script>
-		// Function which prevents the 
+		// Function which prevents the code from cluttering the global object.
 		(function(){
 			var html = document.getElementsByTagName("html")[0];
 			// Notify the html tag that JavaScript is available.
@@ -43,7 +43,7 @@
 			</div>
 		</article>
 		<script src="src/config.js"></script>
-		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="src/main"></script>
+		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="build/cardmaker"></script>
 		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
 	</body>
 </html>
