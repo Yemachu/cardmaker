@@ -25,8 +25,8 @@
 	
 	--fieldset-color: var(--accent-primary-bg-color);
 	
-	--selection-bg-color: var(--input-bg-color);
-	--selection-fg-color: var(--input-fg-color);
+	--selection-bg-color: var(--accent-primary-bg-color);
+	--selection-fg-color: var(--accent-primary-fg-color);
 	
 	--checkbox-icon: url(../res/ui/dusk/checkbox.svg);
 	--checkbox-icon-checked: url(../res/ui/dusk/checkbox-checked.svg);
