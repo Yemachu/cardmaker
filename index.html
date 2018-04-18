@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<title>Neo New card maker</title>
+		<link rel="stylesheet" type="text/css" href="css/Style.css" />
+		<link rel="stylesheet" type="text/css" href="css/Default-Theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/Dawn-Theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/Dusk-Theme.css" />
+		
+		<style>
+			/** Hide parts of the site based on whether JavaScript is available. */
+			/** This method should prevent issues with FOUT. */
+			.js-yes { display: none; }
+			.js .js-yes { display: block; }
+			.js .js-no { display: none; }
+		</style>
+		<script>
+		// Function which prevents the code from cluttering the global object.
+		(function(){
+			var html = document.getElementsByTagName("html")[0];
+			// Notify the html tag that JavaScript is available.
+			html.classList.add("js");
+			// Allow the user to select a theme.
+			var themes = /[\?&]theme=([^&#]*)/.exec(window.location.href);
+			if (themes){ html.classList.add(decodeURI(themes[1]).toLowerCase()); }
+			// Select a style by default.
+			else {html.classList.add("dusk");}
+		})();
+		</script>
+	</head>
+	
+	<body lang="en">
+		<header>
+			<h1>Neo New Card maker</h1>
+		</header>
+		<article class="content">
+			<div id="react-root" class="js-yes">
+				Waiting for JavaScript to load.
+			</div>
+			<div class="js-no">
+				JavaScript seems to be unavailable.
+			</div>
+		</article>
+		<script src="src/config.js"></script>
+		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="build/cardmaker"></script>
+		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
+	</body>
+</html>

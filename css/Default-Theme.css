@@ -1,0 +1,281 @@
+@charset "UTF-8";
+:root
+{
+	--theme-bg-color: #303030;
+	--theme-fg-color: rgba(255, 255, 255, 0.7);
+	
+	/* Used to specify a lighter/darker shade of the main theme color. */
+	--theme-light-bg-color: #424242;
+	--theme-light-fg-color: var(--theme-fg-color);
+	
+	--theme-dark-bg-color: #212121;
+	--theme-dark-fg-color: var(--theme-fg-color);
+	
+	--accent-primary-bg-color: #FFC107;
+	--accent-primary-fg-color: #000;
+	
+	--accent-secondary-bg-color: #FFC107;
+	--accent-secondary-fg-color: #000;
+	
+	--input-bg-color: var(--theme-dark-bg-color);
+	--input-fg-color: var(--theme-dark-fg-color);
+	
+	--button-bg-color: var(--input-bg-color);
+	--button-fg-color: var(--input-fg-color);
+	
+	--fieldset-color: var(--accent-primary-bg-color);
+	
+	--selection-bg-color: var(--accent-primary-bg-color);
+	--selection-fg-color: var(--accent-primary-fg-color);
+	
+	--checkbox-icon: url(../res/ui/dusk/checkbox.svg);
+	--checkbox-icon-checked: url(../res/ui/dusk/checkbox-checked.svg);
+	
+	--dropdown-icon: url(../res/ui/dusk/select-arrow.svg);
+}
+
+/******************************************************************************/
+/* A dark color theme for websites.                                           */
+/*                                                                            */
+/* It consists of dark shades of grey, and uses amber as a color for accents. */
+/******************************************************************************/
+body
+{
+	background-color: #303030;
+	background-color: var(--theme-bg-color);
+	color: #fff; /* fallback in case rgba() doesn't work. */
+	color: rgba(255,255,255, 0.7);
+	color: var(--theme-fg-color);
+	/* Default font on most browsers is serif, which looks somewhat dated. */
+	font-family: sans-serif;
+}
+
+/* Make the selection the accent color, and maintain contrast. */
+::selection 
+{
+	color: #000; 
+	color: var(--selection-fg-color);
+	background-color: #FFC107; 
+	background-color: var(--selection-bg-color);
+}
+/* Firefox wants to be special. */
+::-moz-selection
+{
+	color: #000; 
+	color: var(--selection-fg-color);
+	background-color: #FFC107; 
+	background-color: var(--selection-bg-color);
+}
+
+/******************************************************************************/
+
+/******************************************************************************/
+body > header
+{
+	z-index: 1;
+	
+	color: #000; 
+	color: var(--theme-dark-fg-color);
+	background-color: #FFC107; 
+	background-color: var(--theme-dark-bg-color);
+	
+	box-shadow: 0 0px 8px #000;
+	
+}
+
+/******************************************************************************/
+
+/******************************************************************************/
+fieldset
+{
+	/* Make the border slightly more sublte. */
+	border: solid thin #212121;
+	border: solid thin var(--fieldset-color);
+	margin-bottom: 0.5em;
+}
+
+/******************************************************************************/
+/* General styling for labels and inputs.                                     */
+/******************************************************************************/
+label
+{
+	/* Put each label on its own line. */
+	display: block;
+}
+
+input,
+textarea,
+select,
+button
+{
+	/* Put each input on its own line, giving it full width. Its parent is */
+	/* responsible for constraining its size. */
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	
+	/* Let the styling on the rest of the page affect input elements as well. */
+	font-family: inherit;
+	font-size: inherit;
+	
+	color: inherit;
+	color: var(--input-fg-color);
+	
+	background-color: #212121;
+	background-color: var(--input-bg-color);
+	
+	/* No need for a border due to background color and drop shadow. */
+	border: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	/* The border tend to become somewhat snug by default. Add some space. */
+	padding: 0.5em;
+	
+	/* Add some space between the label and next element. */
+	margin-top: 0.25em;
+	margin-bottom: 1em;
+}
+
+input:focus,
+textarea:focus
+{
+	/* Provide some feedback as to which element has focus. */
+	/* The label should be closer to the object to which it applies. */
+	outline: solid medium #FFC107;
+	outline-color: var(--accent-secondary-bg-color);
+}
+
+/******************************************************************************/
+/* Styling for text related elements.                                         */
+/******************************************************************************/
+input[type="text"],
+input[type="number"],
+/* TODO: Add more text styles like email. */
+textarea
+{
+	/* Slightly darker than the background to catch the eye. */
+	background-color: #212121;
+	background-color: var(--input-bg-color);
+	/* Shadow to suggest depth. */
+	box-shadow: inset 0 1px 2px #000;
+	
+	/* Default appearance for the element might not look too great. */
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+textarea
+{
+	/* Textareas typically contain more text, so it should be taller. */
+	height: 5em;
+	/* Keep the width of the elements consistent, but allow for resizing. */
+	resize: vertical;
+}
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+button
+{
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 1px 2px #000;
+	padding: 10px;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	text-decoration: none;
+}
+button + button
+{
+	margin-left: 1em;
+}
+button:hover
+{
+	
+}
+button:active
+{
+	
+}
+
+/******************************************************************************/
+/* Styling for Checkboxes.                                                    */
+/*                                                                            */
+/* Checkboxes typically appear in front of the label. Assuming that label is  */
+/* the last element in the child of its parent, it can be inferred it belongs */
+/* to the checkbox, so it can be styled instead, as it has more options.      */
+/******************************************************************************/
+
+input[type="checkbox"]
+{
+	/* Can hardly be styled, so use the label instead.*/
+	display: none;
+}
+
+input[type="checkbox"] + label:last-child::before
+{
+		/* Required to make the pseudo-element show up. */
+		content: "";
+		/* Place the checkbox at the same line as the text. */
+		display: inline-block;
+		/* The size should match the text to some degree. */
+		height: 1em;
+		width: 1em;
+		/* Some space between the icon and text. */
+		margin-right: 0.25em;
+		vertical-align: baseline;
+		/* A checkbox typically isn't a pattern. */
+		background-repeat: no-repeat;
+		/* Scale the image up or down based on the font size. */
+		background-size: contain;
+		background-image: url(../res/ui/dark/checkbox.svg);
+		background-image: var(--checkbox-icon);
+}
+
+input[type="checkbox"]:checked + label:last-child::before
+{
+	/* Give the user feedback that it has been checked. */
+	background-image: url(../res/ui/dark/checkbox-checked.svg);
+	background-image: var(--checkbox-icon-checked);
+}
+
+
+/******************************************************************************/
+/* Styling for Selections.                                                    */
+/*                                                                            */
+/* Checkboxes typically appear in front of the label. Assuming that label is  */
+/* the last element in the child of its parent, it can be inferred it belongs */
+/* to the checkbox, so it can be styled instead, as it has more options.      */
+/******************************************************************************/
+select
+{
+	box-shadow: 0 1px 2px #000;
+	
+	/* Draw a custom arrow on the select element. */
+	background-image: url(../res/ui/dark/select-arrow.svg);
+	background-image: var(--dropdown-icon);
+	background-position: right;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+/******************************************************************************/
+
+/******************************************************************************/
+
+pre
+{
+	box-shadow: inset 0 1px 2px #000;
+	font-size: inherit;
+	font-family: monospace;
+	padding: 10px;
+	line-height: 1em;
+	background-color: #212121;
+	background-color: var(--input-bg-color);
+	color: inherit;
+	color: var(--input-fg-color);
+}

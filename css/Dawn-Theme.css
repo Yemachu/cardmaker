@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.dawn
+{
+	--theme-bg-color: #FAFAFA;
+	--theme-fg-color: rgba(0, 0, 0, 0.7);
+	
+	--theme-light-bg-color: #FFFFFF;
+	--theme-light-fg-color: var(--theme-fg-color);
+	
+	--theme-dark-bg-color: #F5F5F5;
+	--theme-dark-fg-color: var(--theme-fg-color);
+	
+	--accent-primary-bg-color: #03A9F4;
+	--accent-primary-fg-color: #000;
+	
+	--accent-secondary-bg-color: #03A9F4;
+	--accent-secondary-fg-color: #000;
+	
+	--fieldset-color: var(--accent-secondary-bg-color);
+	
+	--checkbox-icon: url(../res/ui/dawn/checkbox.svg);
+	--checkbox-icon-checked: url(../res/ui/dawn/checkbox-checked.svg);
+	
+	--dropdown-icon: url(../res/ui/dawn/select-arrow.svg);
+}
