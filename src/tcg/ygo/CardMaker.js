@@ -139,6 +139,11 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				e(
 					"div",
 					{ className: "editor" },
+					
+					e("button", { onClick: this.create}, "New"),
+					e("button", { onClick: this.save }, "Save"),
+					e("button", { onClick: this.open }, "Open"),
+					
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
 					e("label", null, "Template", e("select",  { onChange: this.updateField("card.layout"), value: this.state.card.layout }, templates)),
 					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute"), value: this.state.card.attribute }, attributes)),
@@ -217,10 +222,6 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 							)
 						))
 					),
-					
-					e("button", { onClick: this.create}, "New"),
-					e("button", { onClick: this.save }, "Save"),
-					e("button", { onClick: this.open }, "Open"),
 					
 					e("pre", { "className": "special" }, "∞\n", "☆\n", "●\n")
 				)
