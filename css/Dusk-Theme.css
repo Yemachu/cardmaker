@@ -24,21 +24,3 @@
 	
 	--dropdown-icon: url(../res/ui/dusk/select-arrow.svg);
 }
-{
-
-	--input-bg-color: var(--theme-dark-bg-color);
-	--input-fg-color: var(--theme-dark-fg-color);
-	
-	--button-bg-color: var(--input-bg-color);
-	--button-fg-color: var(--input-fg-color);
-	
-	--fieldset-color: var(--accent-primary-bg-color);
-	
-	--selection-bg-color: var(--input-bg-color);
-	--selection-fg-color: var(--input-fg-color);
-	
-	--checkbox-icon: url(../res/ui/dark/checkbox.svg);
-	--checkbox-icon-checked: url(../res/ui/dark/checkbox-checked.svg);
-	
-	--dropdown-icon: url(../res/ui/dark/select-arrow.svg);
-}
