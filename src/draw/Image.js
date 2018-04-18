@@ -18,6 +18,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 				"img",
 				{
 					src: this.props.src,
+					crossOrigin: "anonymous",
 					onLoad: this.onLoad,
 					style: {
 						position: "absolute",
