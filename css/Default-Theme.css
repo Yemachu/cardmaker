@@ -28,10 +28,10 @@
 	--selection-bg-color: var(--input-bg-color);
 	--selection-fg-color: var(--input-fg-color);
 	
-	--checkbox-icon: url(../res/ui/dark/checkbox.svg);
-	--checkbox-icon-checked: url(../res/ui/dark/checkbox-checked.svg);
+	--checkbox-icon: url(../res/ui/dusk/checkbox.svg);
+	--checkbox-icon-checked: url(../res/ui/dusk/checkbox-checked.svg);
 	
-	--dropdown-icon: url(../res/ui/dark/select-arrow.svg);
+	--dropdown-icon: url(../res/ui/dusk/select-arrow.svg);
 }
 
 /******************************************************************************/
