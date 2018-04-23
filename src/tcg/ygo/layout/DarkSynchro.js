@@ -6,9 +6,9 @@ define(["react", "react-class", "draw/Group", "./component/All"], function DarkS
 			return React.createElement(
 				Group,
 				this.props,
-				React.createElement(C.Image, { value: this.props.image, pendulum: this.props.pendulum.enabled }),
+				React.createElement(C.Image, { value: this.props.image, pendulum: this.props.pendulum.enabled, rarity: this.props.rarity }),
 				React.createElement(C.Border, { value: "DarkSynchro", pendulum: this.props.pendulum.enabled }),
-				React.createElement(C.CardName, { value: this.props.name, color: "white" }),
+				React.createElement(C.CardName, { value: this.props.name, color: "white", rarity: this.props.rarity }),
 				React.createElement(C.Attribute, { value: this.props.attribute }),
 				React.createElement(C.Level, { value: -this.props.level, star: "Negative" }),
 				
