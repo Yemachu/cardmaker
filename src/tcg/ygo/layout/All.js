@@ -5,12 +5,13 @@ define([
 	"./Fusion",
 	"./Synchro",
 	"./DarkSynchro",
+	"./Unity",
 	"./Xyz",
 	"./Link",
 	"./Token",
 	"./Spell",
 	"./Trap"
-], function ygo_template_all(Normal, Effect, Ritual, Fusion, Synchro, DarkSynchro, Xyz,  Link, Token, Spell, Trap)
+], function ygo_template_all(Normal, Effect, Ritual, Fusion, Synchro, DarkSynchro, Unity, Xyz,  Link, Token, Spell, Trap)
 {
 	return {
 		Normal: { value: "Normal", fn: Normal },
@@ -20,6 +21,7 @@ define([
 		Synchro: { value: "Synchro", fn:Synchro }, 
 		DarkSynchro: { value: "DarkSynchro", name: "Dark Synchro", fn: DarkSynchro },
 		Xyz: { value: "Xyz", fn: Xyz },
+//		Unity: { value: "Unity", fn: Unity },
 		Link: { value: "Link", fn: Link },
 		Token: { value: "Token", fn: Token },
 		Spell: { value: "Spell", fn: Spell },
