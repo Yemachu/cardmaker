@@ -21,7 +21,7 @@ define([
 		Synchro: { value: "Synchro", fn:Synchro }, 
 		DarkSynchro: { value: "DarkSynchro", name: "Dark Synchro", fn: DarkSynchro },
 		Xyz: { value: "Xyz", fn: Xyz },
-//		Unity: { value: "Unity", fn: Unity },
+		Unity: { value: "Unity", fn: Unity },
 		Link: { value: "Link", fn: Link },
 		Token: { value: "Token", fn: Token },
 		Spell: { value: "Spell", fn: Spell },

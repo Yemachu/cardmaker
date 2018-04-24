@@ -6,9 +6,9 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Ritua
 			return React.createElement(
 				Group,
 				this.props,
-				React.createElement(C.Image, { value: this.props.image, pendulum: true }),
-				React.createElement(C.Border, { value: "Unity" }),
-				React.createElement(C.CardName, { value: this.props.name }),
+				React.createElement(C.Image, { value: this.props.image, pendulum: true, rarity: this.props.rarity }),
+				React.createElement(C.Border, { value: "Unity", pendulum: true}),
+				React.createElement(C.CardName, { value: this.props.name, rarity: this.props.rarity }),
 				React.createElement(C.Attribute, { value: this.props.attribute }),
 				React.createElement(C.Level, { value: this.props.level, star: "Normal" }),
 				
