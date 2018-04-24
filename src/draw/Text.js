@@ -265,6 +265,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 			var font;
 			ctx.font = font = [
 				style.fontStyle, // "normal", "italic" or "oblique".
+				style.fontVariant,
 				style.fontWeight, // "thin", "normal", "bold". Can also be a number.
 				style.fontSize + "px", // Size of the text in pixels.
 				style.fontFamily // Array in the order of which font should be tried.
@@ -283,6 +284,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 		style: { 
 			color: "black",
 			fontFamily: [ "serif" ], // Font to use if not specified.
+			fontVariant: "normal", // Could be small caps.
 			fontSize: 14, // Default font height (in pixels).
 			fontStyle: "normal", // Normal, straight text; could be italic or oblique.
 			fontWeight: 400, // Normal text weight, lower is thinner; higher thicker.
