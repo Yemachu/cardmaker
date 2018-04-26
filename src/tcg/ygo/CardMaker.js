@@ -1,7 +1,8 @@
 define(["react", "react-class", "./Card", "webfont"], function App(React, ReactClass, Card, WebFont)
 {
 	var emptyCard = {
-		version: "1.0.0",
+		version: "1.1.0",
+		rarity: "Common",
 		name: "",
 		level: 0,
 		type: "",
@@ -99,31 +100,31 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		
 		render: function render()
 		{
-			var templates = [];
-			for (var key in Card.Layout)
+			function makeSelect(data)
 			{
-				if (Card.Layout.hasOwnProperty(key))
+				var options = [];
+				for (var key in data)
 				{
-					templates[templates.length] = React.createElement("option", { key: key }, key);
+					if (data.hasOwnProperty(key))
+					{
+						element = data[key] || {};
+						options[options.length] = React.createElement
+						(
+							"option", 
+							{ 
+								key: key, 
+								value: typeof element.value !== "undefined" ? element.value : key 
+							}, 
+							element.name || key);
+					}
 				}
+				return options;
 			}
-			var attributes = [];
 			
-			for (var key in Card.Attributes)
-			{
-				if (Card.Attributes.hasOwnProperty(key))
-				{
-					attributes[attributes.length] = React.createElement("option", { key: key }, key);
-				}
-			}
-			var icons = [];
-			for(var key in Card.Icons)
-			{
-				if(Card.Icons.hasOwnProperty(key))
-				{
-					icons[icons.length] = React.createElement("option", { key: key }, key);
-				}
-			}
+			var templates = makeSelect(Card.Layout);
+			var attributes = makeSelect(Card.Attributes);
+			var icons = makeSelect(Card.Icons);
+			var rarities = makeSelect(Card.Rarities);
 			
 			var e = React.createElement;
 			return e(
@@ -145,6 +146,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("button", { onClick: this.open }, "Open"),
 					
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
+					e("label", null, "Rarity", e("select", { onChange: this.updateField("card.rarity"), value: this.state.card.rarity }, rarities)),
 					e("label", null, "Template", e("select",  { onChange: this.updateField("card.layout"), value: this.state.card.layout }, templates)),
 					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute"), value: this.state.card.attribute }, attributes)),
 					e("label", null, "Level", e("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level })),

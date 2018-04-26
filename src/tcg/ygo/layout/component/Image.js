@@ -1,4 +1,4 @@
-define(["react", "react-class", "draw/Image"], function Image(React, ReactClass, Img)
+define(["react", "react-class", "draw/Image", "../../Rarities"], function Image(React, ReactClass, Img, Rarities)
 {
 	var styles = {
 		Normal: {
@@ -18,20 +18,36 @@ define(["react", "react-class", "draw/Image"], function Image(React, ReactClass,
 	var Image = ReactClass({
 		render: function render()
 		{
+			var style = this.props.pendulum ? styles.Pendulum : styles.Normal;
+			var foil = React.createElement("span");
 			return React.createElement(
-				Img, 
-				{
-					src: this.props.value, 
-					style: this.props.pendulum ? styles.Pendulum : styles.Normal,
-					repaint: this.props.repaint, 
-					canvas: this.props.canvas 
-				}
+				React.Fragment,
+				null,
+				React.createElement(
+					Img, 
+					{
+						src: this.props.value, 
+						style: style,
+						repaint: this.props.repaint, 
+						canvas: this.props.canvas 
+					}
+				),
+				React.createElement(
+					Img,
+					{
+						src: (Rarities[this.props.rarity] || {}).foil,
+						style: Object.assign({}, style, { mixBlendMode: "color-dodge"}),
+						repaint: this.props.repaint, 
+						canvas: this.props.canvas 
+						
+					}
+				)
 			);
 		}
 	});
 	Image.displayName = "Image";
 	Image.defaultProps = {
-		
+		rarity: "common"
 	};
 	return Image;
 });

@@ -25,7 +25,8 @@ define(["react", "react-class"], function Image(React, ReactClass)
 						left: this.props.style.left,
 						top: this.props.style.top,
 						width: this.props.style.width,
-						height: this.props.style.height
+						height: this.props.style.height,
+						mixBlendMode: this.props.style.mixBlendMode
 					}
 				}
 			)
@@ -44,6 +45,8 @@ define(["react", "react-class"], function Image(React, ReactClass)
 			if (canvas !== null && this.state.image !== null)
 			{
 				var ctx = canvas.getContext("2d");
+				ctx.save();
+				ctx.globalCompositeOperation = this.props.style.mixBlendMode;
 				ctx.drawImage(
 					this.state.image, 
 					this.props.style.left, 
@@ -54,6 +57,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 					this.props.style.width || this.state.image.width, 
 					this.props.style.height || this.state.image.height
 				);
+				ctx.restore();
 			}
 		}
 	});
@@ -65,6 +69,7 @@ define(["react", "react-class"], function Image(React, ReactClass)
 			top: 0,
 			width: undefined, 
 			height: undefined, 
+			mixBlendMode: "normal"
 		},
 		canvas: null, 
 		repaint: function repaint(){/* Empty function.*/} 
