@@ -1,0 +1,11 @@
+{
+	"baseUrl": "../src",
+	"paths": {
+		"almond": "../lib/almond",
+		"webfont": "../lib/webfont/webfontloader"
+	},
+	"name": "almond",
+	"include": ["main"],
+	"out": "cardmaker.min.js",
+	"wrap": true
+}
