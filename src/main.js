@@ -1,18 +1,19 @@
 (function ()
 {
 	// Let the user know the application functions, but is busy with loading.
-	var root = document.getElementById("react-root");
+	var root = document.getElementById("root");
 	root.innerText = "Loading";
 	
 	// Let the user know the application didn't load.
 	requirejs.onError = function(error)
 	{
 		root.innerText = "Loading failed";
+		console.error(error);
 	};
 	
-	require(["react", "react-dom", "App"],function main(React, ReactDOM, App)
+	require(["App"],function main(App)
 	{
-		// Start the application.
-		ReactDOM.render(React.createElement(App), root);
+		root.innerText = "";
+		new App(root);
 	});
 })();

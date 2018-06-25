@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<title>Neo New card maker</title>
-		<link rel="stylesheet" type="text/css" href="css/Style.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/Style.css" />
 		<link rel="stylesheet" type="text/css" href="css/Default-Theme.css" />
 		<link rel="stylesheet" type="text/css" href="css/Dawn-Theme.css" />
-		<link rel="stylesheet" type="text/css" href="css/Dusk-Theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/Dusk-Theme.css" />-->
 		
 		<style>
 			/** Hide parts of the site based on whether JavaScript is available. */
@@ -36,16 +36,16 @@
 		<header>
 			<h1>Neo New Card maker</h1>
 		</header>
-		<article class="content">
-			<div id="react-root" class="js-yes">
+		<article id="root" class="content">
+			<div  class="js-yes">
 				Waiting for JavaScript to load.
 			</div>
 			<div class="js-no">
 				JavaScript seems to be unavailable.
 			</div>
 		</article>
+		
 		<script src="src/config.js"></script>
-		<script src="https://unpkg.com/requirejs@2.3.5/require.js" data-main="build/cardmaker"></script>
-		<script>window.define || document.write("<script src=\"lib/require/require.js\"><\/script>");</script>
+		<script src="lib/require.js"></script>
 	</body>
 </html>
