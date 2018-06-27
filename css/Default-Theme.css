@@ -279,3 +279,15 @@ pre
 	color: inherit;
 	color: var(--input-fg-color);
 }
+
+a
+{
+	color: #FFC107;
+	color: var(--accent-primary-bg-color);
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
