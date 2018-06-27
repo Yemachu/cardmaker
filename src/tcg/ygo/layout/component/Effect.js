@@ -2,7 +2,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 {
 	var styles = {
 		Monster: {
-			fontFamily: ["Buenard", "serif"],
+			fontFamily: ["Spectral", "serif"],
 			
 			fontSize: 13,
 			textAlign: "justify",
@@ -13,7 +13,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 			height: 75
 		},
 		Backrow: {
-			fontFamily: ["Buenard", "serif"],
+			fontFamily: ["Spectral", "serif"],
 			
 			fontSize: 13,
 			textAlign: "justify",

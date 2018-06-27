@@ -37,6 +37,7 @@ body > header
 
 body > header > h1
 {
+	display: inline-block;
 	margin: 0;
 	font-size: 2em;
 	white-space: nowrap;
@@ -45,7 +46,14 @@ body > header > h1
 body > article
 {
 	top: 3em;
+	bottom: 2em;
+}
+
+body > footer
+{
 	bottom: 0;
+	height: 2em;
+	text-align: right;
 }
 
 input, textarea, label, select
