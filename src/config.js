@@ -15,6 +15,7 @@ var require = {
 		// Used to make sure the correct fonts have been loaded.
 		"webfont": "../lib/webfontloader",
 		// Use text files as if they were a define with a long string.
-		"text": "../lib/text"
+		"text": "../lib/text",
+    "handlebars": "../lib/handlebars"
 	}
 }
