@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+		/*
+		 *  
+		 */
+		@import url("https://fonts.googleapis.com/css?family=Spectral|Spectral+SC:600");
+		body
+		{
+			/* Size of the template. */
+			margin: 0;
+			padding: 0;
+			display: block;
+			width: 420px;
+			height: 610px;
+			position: absolute;
+		}
+		
+		.imagery
+		{
+			display: block;
+			position: relative;
+			z-index: -1;
+		}
+		
+		.ygo .name
+		{
+			font-family: "Spectral SC", serif;
+			font-size: 32px;
+			font-weight: 600;
+			font-variant: small-caps;
+		}
+
+		.ygo .effect
+		{
+			/*  */
+			font-family: MatrixBook, Buenard, serif;
+		}
+		
+		.ygo .image
+		{
+			display: block;
+			position: absolute;
+			left: 50px;
+			width: 320px;
+			height: 320px;
+		}
+		
+		.ygo .foil
+		{
+			position: absolute;
+			left: 50px;
+			right: 50px;
+			z-index: 1;
+			mix-blend-mode: color-dodge;
+		}
+		
+		.ygo .border
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		</style>
+	</head>
+	<body lang="en" class="ygo">
+	
+		<div class="imagery">
+			<div>
+				{{! }}
+				<img src="res/tcg/ygo/foil/Secret.png" class="foil secret-rare" />
+				<img src="{{card.image}}" class="image" />
+			</div>
+			<div class="border">
+				<img src="res/tcg/ygo/border/Normal.png" class="" />
+			</div>
+		</div>
+		
+		<div class="name">
+			{{card.name}}
+		</div>
+		
+		<div class="type">
+			<span>[</span>{{card.type}}<img src="" /><span>]</span>
+		</div>
+		
+		<div class="text-field effect">
+			{{card.effect}}
+		</div>
+		
+		{{#if card.pendulum.enabled}}
+		<div>
+			<div>
+				{{card.pendulum.blue}}
+			</div>
+		</div>
+		{{/if}}
+		
+		<div class="stats">
+			<div class="atk">
+				{{card.atk}}
+			</div>
+			
+			<div class="def">
+				{{card.def}}
+			</div>
+			
+			<div class="link">
+				{{card.link}}
+			</div>
+		</div>
+	</body>
+</html>
