@@ -20,6 +20,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Xyz(R
 				React.createElement(C.Def, { value: this.props.def }),
 				
 				React.createElement(C.Serial, { value: this.props.serial, color: this.props.pendulum.enabled ? undefined : "white" }),
+				React.createElement(C.Id, { value: this.props.id, position: this.props.pendulum.enabled ? "pendulum" : "regular", color: this.props.pendulum.enabled ? undefined : "white" }),
 				React.createElement(C.Copyright, { value: this.props.copyright, color: this.props.pendulum.enabled ? undefined : "white" })
 			);
 		}

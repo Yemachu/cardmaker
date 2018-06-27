@@ -11,7 +11,7 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 					{ 
 						text: this.props.effect,
 						style: {
-							fontFamily: ["Buenard", "serif"],
+							fontFamily: ["Spectral", "serif"],
 						
 							fontSize: 13,
 							textAlign: "justify",
