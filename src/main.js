@@ -5,7 +5,7 @@
 	root.innerText = "Loading";
 	
 	// Let the user know the application didn't load.
-	requirejs.onError = function(error)
+	require.onError = function(error)
 	{
 		root.innerText = "Loading failed";
 		console.error(error);
