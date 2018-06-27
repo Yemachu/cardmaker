@@ -20,6 +20,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Synch
 				React.createElement(C.Def, { value: this.props.def }),
 				
 				React.createElement(C.Serial, { value: this.props.serial }),
+				React.createElement(C.Id, { value: this.props.id, position: this.props.pendulum.enabled ? "pendulum" : "regular" }),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 		}

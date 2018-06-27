@@ -12,8 +12,9 @@ define([
 	"./Link",
 	"./Serial",
 	"./Copyright",
-	"./LinkMarkers"
-], function ygo_template_all(CardName, Attribute, Border, Image, Level, Type, Effect, Atk, Def, Pendulum, Link, Serial, Copyright, LinkMarkers)
+	"./LinkMarkers",
+	"./Id"
+], function ygo_template_all(CardName, Attribute, Border, Image, Level, Type, Effect, Atk, Def, Pendulum, Link, Serial, Copyright, LinkMarkers, Id)
 {
 	return {
 		CardName: CardName,
@@ -29,6 +30,7 @@ define([
 		Link: Link,
 		Serial: Serial,
 		Copyright: Copyright,
-		LinkMarkers: LinkMarkers
+		LinkMarkers: LinkMarkers,
+		Id: Id
 	};
 });

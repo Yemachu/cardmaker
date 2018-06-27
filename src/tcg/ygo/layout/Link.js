@@ -20,6 +20,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Link(
 				React.createElement(C.Link, { value: this.props.def }),
 				
 				React.createElement(C.Serial, { value: this.props.serial }),
+				React.createElement(C.Id, { value: this.props.id, position: "link"}),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 			
