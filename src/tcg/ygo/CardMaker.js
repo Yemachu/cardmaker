@@ -1,7 +1,7 @@
 define(["react", "react-class", "./Card", "webfont"], function App(React, ReactClass, Card, WebFont)
 {
 	var emptyCard = {
-		version: "1.1.0",
+		version: "1.2.0",
 		rarity: "Common",
 		name: "",
 		level: 0,
@@ -11,6 +11,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		def: "",
 		serial: "This card cannot be used in a Duel.",
 		copyright: "© 1993 YEMACHU",
+		id: "",
 		attribute: "None",
 		pendulum: 
 		{
@@ -59,6 +60,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					serial: "This card cannot be used in a Duel.",
 					copyright: "© 1993 YEMACHU",
 					attribute: "None",
+					id: "YCM - EN000",
 					pendulum: 
 					{
 						enabled: true,
@@ -86,6 +88,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					families: [
 						"Buenard", 
 						"Spectral SC:semi-bold,extra-bold", 
+						"Spectral",
 						"Amiri:italic", 
 						"Audiowide", 
 						"Crimson Text:semi-bold,bold"
@@ -159,6 +162,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					
 					e("label", null, "Attack", e("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk })),
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
+					e("label", null, "Set id", e("input", { onChange: this.updateField("card.id"), type: "text", value: this.state.card.id })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.serial"), type: "text", value: this.state.card.serial })),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
 					
