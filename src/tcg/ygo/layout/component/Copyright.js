@@ -4,7 +4,7 @@ define(["react", "react-class", "draw/Text"], function Copyright(React, ReactCla
 		render: function render()
 		{
 			return React.createElement(Text, { text: this.props.value, style: {
-				fontFamily: ["Buenard", "serif"],
+				fontFamily: ["Spectral", "serif"],
 				color: this.props.color,
 				fontSize: 12,
 				textAlign: "right",
