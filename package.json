@@ -1,0 +1,25 @@
+{
+  "name": "cardmaker",
+  "version": "1.1.1",
+  "description": "Generate custom cards for trading card games.",
+  "main": "build/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yemachu/cardmaker.git"
+  },
+  "keywords": [
+    "tcg"
+  ],
+  "author": "Yemachu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yemachu/cardmaker/issues"
+  },
+  "homepage": "https://github.com/yemachu/cardmaker#readme"
+}
