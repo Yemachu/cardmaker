@@ -6,7 +6,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Link(
 			return React.createElement(
 				Group,
 				this.props,
-				React.createElement(C.Image, { value: this.props.image, rarity: this.props.rarity }),
+				React.createElement(C.Image, { value: this.props.image, pendulum: this.props.pendulum.enabled, rarity: this.props.rarity }),
 				React.createElement(C.Border, { value: "Link", pendulum: this.props.pendulum.enabled }),
 				React.createElement(C.CardName, { value: this.props.name, color: "white", rarity: this.props.rarity }),
 				React.createElement(C.Attribute, { value: this.props.attribute }),
