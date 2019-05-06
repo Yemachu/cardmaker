@@ -17,7 +17,7 @@ define(["react", "react-class", "draw/Group", "./component/All"], function Trap(
 				React.createElement(C.Effect, { value: this.props.effect, type: "Backrow" }),
 
 				React.createElement(C.Serial, { value: this.props.serial }),
-				React.createElement(C.Id, { value: this.props.id, position: "regular" }),
+				React.createElement(C.Id, { value: this.props.id, position: this.props.pendulum.enabled ? "pendulum" : "regular"}),
 				React.createElement(C.Copyright, { value: this.props.copyright })
 			);
 		}
