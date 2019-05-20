@@ -13,14 +13,14 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		copyright: "© 1993 YEMACHU",
 		id: "",
 		attribute: "None",
-		pendulum: 
+		pendulum:
 		{
 			enabled: false,
 			effect: "",
 			blue: "5",
 			red: "5"
 		},
-		link: 
+		link:
 		{
 			topLeft: false,
 			topCenter: false,
@@ -33,9 +33,9 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		},
 		layout: "Normal"
 	}
-	
+
 	return ReactClass({
-		
+
 		getInitialState: function initialState()
 		{
 		// Custom card maker state.
@@ -43,7 +43,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 			window.addEventListener("beforeunload", function(e){
 				localStorage.setItem(saveDataKey, JSON.stringify(this.state));
 			}.bind(this));
-			
+
 			var savedata = JSON.parse(localStorage.getItem(saveDataKey));
 			console.log(savedata);
 			var defaultdata = {
@@ -61,14 +61,14 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					copyright: "© 1993 YEMACHU",
 					attribute: "None",
 					id: "YCM - EN000",
-					pendulum: 
+					pendulum:
 					{
 						enabled: true,
 						effect: "",
 						blue: "5",
 						red: "5"
 					},
-					link: 
+					link:
 					{
 						topLeft: false,
 						topCenter: false,
@@ -82,25 +82,26 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					layout: "Normal"
 				}
 			};
-			
+
 			WebFont.load({
-				google: { 
+				google: {
 					families: [
-						"Buenard", 
-						"Spectral SC:semi-bold,extra-bold", 
+						"Buenard",
+						"Spectral SC:semi-bold,extra-bold",
 						"Spectral",
-						"Amiri:italic", 
-						"Audiowide", 
-						"Crimson Text:semi-bold,bold"
-					] 
+						"Amiri:italic",
+						"Audiowide",
+						"Crimson Text:semi-bold,bold",
+						"Heebo:medium"
+					]
 				},
 				fontactive: function(){this.forceUpdate();}.bind(this)
 			});
-			
-			
+
+
 			return Object.assign({}, defaultdata, savedata);
 		},
-		
+
 		render: function render()
 		{
 			function makeSelect(data)
@@ -113,22 +114,22 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 						element = data[key] || {};
 						options[options.length] = React.createElement
 						(
-							"option", 
-							{ 
-								key: key, 
-								value: typeof element.value !== "undefined" ? element.value : key 
-							}, 
+							"option",
+							{
+								key: key,
+								value: typeof element.value !== "undefined" ? element.value : key
+							},
 							element.name || key);
 					}
 				}
 				return options;
 			}
-			
+
 			var templates = makeSelect(Card.Layout);
 			var attributes = makeSelect(Card.Attributes);
 			var icons = makeSelect(Card.Icons);
 			var rarities = makeSelect(Card.Rarities);
-			
+
 			var e = React.createElement;
 			return e(
 				"div",
@@ -143,30 +144,30 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				e(
 					"div",
 					{ className: "editor" },
-					
+
 					e("button", { onClick: this.create}, "New"),
 					e("button", { onClick: this.save }, "Save"),
 					e("button", { onClick: this.open }, "Open"),
-					
+
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
 					e("label", null, "Rarity", e("select", { onChange: this.updateField("card.rarity"), value: this.state.card.rarity }, rarities)),
 					e("label", null, "Template", e("select",  { onChange: this.updateField("card.layout"), value: this.state.card.layout }, templates)),
 					e("label", null, "Attribute", e("select", { onChange: this.updateField("card.attribute"), value: this.state.card.attribute }, attributes)),
 					e("label", null, "Level", e("input", { onChange: this.updateField("card.level"), type: "number", value: this.state.card.level })),
-					
+
 					e("label", null, "Image", e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })),
-					
+
 					e("label", null, "Type",  e("input", { onChange: this.updateField("card.type"), type: "text", value: this.state.card.type })),
 					e("label", null, "Icon", e("select", { onChange: this.updateField("card.icon"), value: this.state.card.icon }, icons)),
 					e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.effect"), value: this.state.card.effect })),
-					
+
 					e("label", null, "Attack", e("input", { onChange: this.updateField("card.atk"), type: "text", value: this.state.card.atk })),
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
 					e("label", null, "Set id", e("input", { onChange: this.updateField("card.id"), type: "text", value: this.state.card.id })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.serial"), type: "text", value: this.state.card.serial })),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
-					
-					
+
+
 					e(
 						"fieldset",
 						null,
@@ -176,23 +177,23 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 							e("input", { id: "ccm_ygo:pendulum.enabled", onChange: function(e){this.updateField("card.pendulum.enabled")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.pendulum.enabled }),
 							e("label", { htmlFor: "ccm_ygo:pendulum.enabled"}, "Pendulum" )
 						),
-						
+
 						e("label", null, "Blue scale", e("input", { onChange: this.updateField("card.pendulum.blue"), type: "text", value: this.state.card.pendulum.blue })),
 						e("label", null, "Red scale", e("input", { onChange: this.updateField("card.pendulum.red"), type: "text", value: this.state.card.pendulum.red })),
 						e("label", null, "Effect", e("textarea", { onChange: this.updateField("card.pendulum.effect"), type: "text", value: this.state.card.pendulum.effect }))
 					),
-					
+
 					e(
 						"fieldset",
 						null,
 						e("legend", null, "Link"),
 						e("table", null,e("tbody",null,
-							e("tr", null, 
+							e("tr", null,
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.topLeft", onChange: function(e){this.updateField("card.link.topLeft")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.topLeft }),
 									e("label", { htmlFor: "ccm_ygo:link.topLeft"}, "")
 								),
-								e("td", null,	
+								e("td", null,
 									e("input", { id: "ccm_ygo:link.topCenter", onChange: function(e){this.updateField("card.link.topCenter")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.topCenter }),
 									e("label", { htmlFor: "ccm_ygo:link.topCenter"}, "" )
 								),
@@ -201,7 +202,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 									e("label", { htmlFor: "ccm_ygo:link.topRight"}, "" )
 								)
 							),
-							e("tr", null, 
+							e("tr", null,
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.middleLeft", onChange: function(e){this.updateField("card.link.middleLeft")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.middleLeft }),
 									e("label", { htmlFor: "ccm_ygo:link.middleLeft"}, "")
@@ -212,12 +213,12 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 									e("label", { htmlFor: "ccm_ygo:link.middleRight"}, "" )
 								)
 							),
-							e("tr", null, 
+							e("tr", null,
 								e("td", null,
 									e("input", { id: "ccm_ygo:link.bottomLeft", onChange: function(e){this.updateField("card.link.bottomLeft")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.bottomLeft }),
 									e("label", { htmlFor: "ccm_ygo:link.bottomLeft"}, "")
 								),
-								e("td", null,	
+								e("td", null,
 									e("input", { id: "ccm_ygo:link.bottomCenter", onChange: function(e){this.updateField("card.link.bottomCenter")({target: {value: e.target.checked}});}.bind(this), type: "checkbox", checked: this.state.card.link.bottomCenter }),
 									e("label", { htmlFor: "ccm_ygo:link.bottomCenter"}, "" )
 								),
@@ -228,7 +229,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 							)
 						))
 					),
-					
+
 					e("pre", { "className": "special" }, "∞\n", "☆\n", "●\n")
 				)
 			);
@@ -237,7 +238,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 		{
 			this.setState({ card: emptyCard });
 		},
-		
+
 		save: function save()
 		{
 			var link = document.createElement("a");
@@ -254,7 +255,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				link.click();
 			}
 		},
-		
+
 		open: function()
 		{
 			var file = document.createElement("input");
@@ -292,7 +293,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				link.click();
 			}
 		},
-		
+
 		updateField: function updateField(fieldName)
 		{
 			var nesting = fieldName.split(".");
@@ -315,17 +316,17 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 				this.setState(newState);
 			}.bind(this)
 		},
-		
+
 		updateTemplate: function(event)
 		{
 			this.setState({ card: Object.assign({}, this.state.card, { layout: Card.Layout[event.target.value]})});
 		},
-		
+
 		updateCardImage: function(fieldName)
 		{
 			return function(event)
 			{
-				
+
 				var files = event.target.files;
 				if (FileReader && files && files.length)
 				{
