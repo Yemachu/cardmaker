@@ -3,10 +3,10 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 	var styles = {
 		Monster: {
 			fontFamily: ["Spectral", "serif"],
-			
+
 			fontSize: 13,
 			textAlign: "justify",
-			
+
 			left: 35,
 			top: 475,
 			width: 350,
@@ -14,10 +14,10 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 		},
 		Backrow: {
 			fontFamily: ["Spectral", "serif"],
-			
+
 			fontSize: 13,
 			textAlign: "justify",
-			
+
 			left: 35,
 			top: 460,
 			width: 350,
@@ -26,24 +26,36 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 		Vanilla: {
 			fontFamily: ["Amiri", "serif"],
 			fontStyle: "italic",
-			
+
 			fontSize: 13,
 			textAlign: "justify",
-			
+
 			left: 35,
 			top: 475,
 			width: 350,
 			height: 75
-		}
+		},
+
+		Skill: {
+			fontFamily: ["Spectral", "serif"],
+
+			fontSize: 13,
+			textAlign: "justify",
+
+			left: 35,
+			top: 475,
+			width: 350,
+			height: 95
+		},
 	}
-	
+
 	var Effect = ReactClass({
 		render: function render()
 		{
 			return React.createElement(
-				Text, 
+				Text,
 				{
-					text: this.props.value, 
+					text: this.props.value,
 					style: Object.assign({}, styles[this.props.type]),
 					repaint: this.props.repaint,
 					canvas: this.props.canvas
@@ -57,7 +69,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 		// Affects the positioning; backrow gets more room since it does not have
 		// to accomodate for the ATK / DEF values among other things.
 		// Pendulum effects are slightly tighter.
-		type: "Monster", 
+		type: "Monster",
 		flavour: false,
 	};
 	return Effect;
