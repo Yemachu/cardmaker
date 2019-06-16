@@ -1,10 +1,10 @@
 define(["react", "react-class", "draw/Text"], function Id(React, ReactClass, Text)
 {
 	var shared = {
-			fontFamily: ["Spectral", "serif"],
+			fontFamily: ["Matrix Book", "Spectral", "serif"],
 			fontSize: 12,
 			whitespace: "nowrap",
-			
+
 			height: undefined
 	}
 	var styles = {
@@ -28,7 +28,7 @@ define(["react", "react-class", "draw/Text"], function Id(React, ReactClass, Tex
 			width: 80,
 		}
 	};
-	
+
 	var Id = ReactClass({
 		render: function render()
 		{

@@ -3,7 +3,7 @@ define(["react", "react-class", "draw/Text", "../../Rarities"], function CardNam
 
 	var stylePreset =  {
 		regular: {
-			fontFamily: ["Spectral SC", "serif"],
+			fontFamily: ["Matrix Regular Small Caps", "Spectral SC", "serif"],
 			fontSize: 32,
 			fontStyle: "normal",
 			fontWeight: 600,
