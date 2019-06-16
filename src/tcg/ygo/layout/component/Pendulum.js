@@ -4,18 +4,18 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 		render: function render()
 		{
 			return this.props.enabled ? React.createElement(
-				Group, 
+				Group,
 				{ canvas: this.props.canvas, repaint: this.props.repaint },
 				React.createElement(
-					Text, 
-					{ 
+					Text,
+					{
 						text: this.props.effect,
 						style: {
-							fontFamily: ["Spectral", "serif"],
-						
+							fontFamily: ["Matrix Book", "Spectral", "serif"],
+
 							fontSize: 13,
 							textAlign: "justify",
-						
+
 							left: 65,
 							top: 385,
 							width: 290,
@@ -24,7 +24,7 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 					}
 				),
 				React.createElement(
-					Text, 
+					Text,
 					{
 						text: this.props.blue,
 						style: {
@@ -32,7 +32,7 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 							fontSize: 28,
 							textAlign: "center",
 							fontWeight: 600,
-						
+
 							left: 32,
 							top: 410,
 							width: 23,
@@ -49,7 +49,7 @@ define(["react", "react-class", "draw/Group", "draw/Text"], function Pendulum(Re
 							fontSize: 28,
 							textAlign: "center",
 							fontWeight: 600,
-							
+
 							left: 365,
 							top: 410,
 							width: 23,

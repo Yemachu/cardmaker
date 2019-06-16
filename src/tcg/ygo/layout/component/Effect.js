@@ -2,7 +2,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 {
 	var styles = {
 		Monster: {
-			fontFamily: ["Spectral", "serif"],
+			fontFamily: ["Matrix Book", "Spectral", "serif"],
 
 			fontSize: 13,
 			textAlign: "justify",
@@ -13,7 +13,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 			height: 75
 		},
 		Backrow: {
-			fontFamily: ["Spectral", "serif"],
+			fontFamily: ["Matrix Book", "Spectral", "serif"],
 
 			fontSize: 13,
 			textAlign: "justify",
@@ -37,7 +37,7 @@ define(["react", "react-class", "draw/Text"], function Effect(React, ReactClass,
 		},
 
 		Skill: {
-			fontFamily: ["Spectral", "serif"],
+			fontFamily: ["Matrix Book", "Spectral", "serif"],
 
 			fontSize: 13,
 			textAlign: "justify",
