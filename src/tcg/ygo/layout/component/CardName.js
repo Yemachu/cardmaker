@@ -32,7 +32,8 @@ define(["react", "react-class", "draw/Text", "../../Rarities"], function CardNam
 	var colors = {
 		default: { highlight: { color: "transparent" }, base: { color: "#000"} },
 		white: { highlight: { color: "transparent" }, base: { color: "#FFF"} },
-		silver: { highlight: { color: "#FFF" }, base: { color: "#222"} }
+		silver: { highlight: { color: "#b6b6b6" }, base: { color: "#1e1e1e"} },
+		gold: { highlight: { color: "#d3b146"}, base: {color: "#4e3518"}}
 	}
 
 	var CardName = ReactClass({
@@ -47,7 +48,7 @@ define(["react", "react-class", "draw/Text", "../../Rarities"], function CardNam
 				React.createElement(Text,
 				{
 					text: this.props.value,
-					style: Object.assign({}, style, (colors[color] || colors.default).highlight, { top: style.top+1 }),
+					style: Object.assign({}, style, (colors[color] || colors.default).highlight, { top: style.top-1, left: style.left-1 }),
 					repaint: this.props.repaint,
 					canvas: this.props.canvas
 				}),

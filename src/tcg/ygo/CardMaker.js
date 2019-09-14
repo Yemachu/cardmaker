@@ -165,6 +165,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
 					e("label", null, "Set id", e("input", { onChange: this.updateField("card.id"), type: "text", value: this.state.card.id })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.serial"), type: "text", value: this.state.card.serial })),
+					e("button", {onClick: this.randomizeSerialNumber }, "Randomize"),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
 
 
@@ -340,6 +341,14 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					fr.readAsDataURL(files[0]);
 				}
 			}.bind(this);
+		},
+
+		randomizeSerialNumber: function()
+		{
+			var value = "0000000000" + (Math.random() * 10000000000).toFixed(0);
+			console.log(typeof value);
+
+			this.updateField("card.serial")({target:{value: value.substring(value.length-10)}});
 		}
 	});
 });
