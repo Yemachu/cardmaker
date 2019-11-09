@@ -62,7 +62,7 @@ define(["react", "react-class"], function Text(React, ReactClass)
 						break;
 					}
 					// Lower the font size and try again, until it makes no sens to go on.
-					style.fontSize--;
+					style.fontSize -= 0.25;
 				} while(style.fontSize > 0);
 				
 				this.drawText(ctx, paragraphs, style.fontSize);
