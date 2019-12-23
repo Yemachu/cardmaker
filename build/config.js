@@ -6,6 +6,11 @@
 		"react-dom": "empty:",
 		"react-class": "empty:"
 	},
-	"name": "main",
+	"name": "../lib/almond/almond",
+	"include": ["main"],
+	"wrap": {
+		"startFile": "./start.frg",
+		"endFile": "./end.frg"
+	},
 	"out": "cardmaker.js"
 })
