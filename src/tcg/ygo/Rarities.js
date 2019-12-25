@@ -1,6 +1,6 @@
-define([], function()
+define(["./Resources"], function(resources)
 {
-	var path = ["res", "tcg", "ygo", "foil"].join("/");
+	var path = [resources, "tcg", "ygo", "foil"].join("/");
 	return {
 		common:     { name: "Common", foil: undefined, color: undefined },
 		rare:       { name: "Rare", foil: undefined, color: "silver"},

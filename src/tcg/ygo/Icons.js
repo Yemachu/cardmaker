@@ -1,6 +1,6 @@
-define([], function()
+define(["./Resources"], function(resources)
 {
-	var path = ["res", "tcg", "ygo", "icon"].join("/");
+	var path = [resources, "tcg", "ygo", "icon"].join("/");
 	return {
 		"None": { url: null },
 		"Continuous":      { url: [ path, "Continuous.png" ].join("/") },
