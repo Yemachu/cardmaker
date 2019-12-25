@@ -1,7 +1,6 @@
-define([], function Attributes()
+define(["./Resources"], function Attributes(resources)
 {
-	var root = typeof RESOURCES !== "undefined" ? RESOURCES : "res";
-	var path = [root, "tcg", "ygo", "attribute"].join("/");
+	var path = [resources, "tcg", "ygo", "attribute"].join("/");
 	return {
 		None:   { url: undefined },
 		Dark:   { url: [path, "Dark.png"].join("/") },

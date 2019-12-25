@@ -1,9 +1,9 @@
-define(["react", "react-class", "draw/Image"], function Border(React, ReactClass, Image)
+define(["react", "react-class", "draw/Image", "../../Resources"], function Border(React, ReactClass, Image, resources)
 {
 	var Border = ReactClass({
 		render: function render()
 		{
-			var border = "res/tcg/ygo/border/" + this.props.value + ".png";
+			var border = resources + "/tcg/ygo/border/" + this.props.value + ".png";
 			if (this.props.pendulum)
 			{
 				border = border.replace(".png", ".pendulum.png");
