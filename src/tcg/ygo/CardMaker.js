@@ -145,9 +145,9 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					"div",
 					{ className: "editor" },
 
-					e("button", { onClick: this.create}, "New"),
-					e("button", { onClick: this.save }, "Save"),
-					e("button", { onClick: this.open }, "Open"),
+					e("button", { onClick: this.create, className: "ipsButton"}, "New"),
+					e("button", { onClick: this.save, className: "ipsButton" }, "Save"),
+					e("button", { onClick: this.open, className: "ipsButton" }, "Open"),
 
 					e("label", null, "Name",  e("input", { onChange: this.updateField("card.name"), type: "text", value: this.state.card.name })),
 					e("label", null, "Rarity", e("select", { onChange: this.updateField("card.rarity"), value: this.state.card.rarity }, rarities)),
@@ -165,7 +165,7 @@ define(["react", "react-class", "./Card", "webfont"], function App(React, ReactC
 					e("label", null, "Defense and/or Link", e("input", { onChange: this.updateField("card.def"), type: "text", value: this.state.card.def })),
 					e("label", null, "Set id", e("input", { onChange: this.updateField("card.id"), type: "text", value: this.state.card.id })),
 					e("label", null, "Serial number", e("input", { onChange: this.updateField("card.serial"), type: "text", value: this.state.card.serial })),
-					e("button", {onClick: this.randomizeSerialNumber }, "Randomize"),
+					e("button", {onClick: this.randomizeSerialNumber ,className: "ipsButton" }, "Randomize"),
 					e("label", null, "Copyright", e("input", { onChange: this.updateField("card.copyright"), type: "text", value: this.state.card.copyright })),
 
 
