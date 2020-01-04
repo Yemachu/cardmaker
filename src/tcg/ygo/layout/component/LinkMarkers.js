@@ -1,4 +1,4 @@
-define(["react", "react-class", "draw/Group", "draw/Image"], function LinkMarkers(React, ReactClass, Group, Image)
+define(["react", "react-class", "draw/Group", "draw/Image", "../../Resources"], function LinkMarkers(React, ReactClass, Group, Image, Resources)
 {
 	var positioning = {
 		regular: {
@@ -103,7 +103,7 @@ define(["react", "react-class", "draw/Group", "draw/Image"], function LinkMarker
 		}
 	};
 
-	var path = "res/tcg/ygo/marker";
+	var path = Resources + "/tcg/ygo/marker";
 	var LinkMarkers = ReactClass({
 		render: function render()
 		{
