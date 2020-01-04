@@ -159,22 +159,41 @@ button:active
 /* the last element in the child of its parent, it can be inferred it belongs */
 /* to the checkbox, so it can be styled instead, as it has more options.      */
 /******************************************************************************/
-
-input[type="checkbox"]
+.ipsCustomInput
 {
-	/* Can hardly be styled, so use the label instead.*/
-	display: none;
+	font: initial;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	position: relative;
 }
 
-input[type="checkbox"] + label:last-child::before
+.ipsCustomInput input[type="checkbox"]
+{
+	position: absolute;
+	box-sizing: content-box;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	border:none;
+	outline: none;
+	padding: 0;
+
+	opacity: 0;
+}
+.ipsCustomInput input[type="checkbox"] + span::after
 {
 		/* Required to make the pseudo-element show up. */
 		content: "";
+		pointer-events: none;
+		position: absolute;
 		/* Place the checkbox at the same line as the text. */
 		display: inline-block;
 		/* The size should match the text to some degree. */
-		height: 1em;
-		width: 1em;
+		height: 100%;
+		width: 100%;
 		/* Some space between the icon and text. */
 		margin-right: 0.25em;
 		vertical-align: baseline;
@@ -182,14 +201,21 @@ input[type="checkbox"] + label:last-child::before
 		background-repeat: no-repeat;
 		/* Scale the image up or down based on the font size. */
 		background-size: contain;
+		background-position: center;
 		background-image: url(../res/ui/dusk/checkbox.svg);
 }
 
-input[type="checkbox"]:checked + label:last-child::before
+.ipsCustomInput input[type="checkbox"]:checked + span::after
 {
 	/* Give the user feedback that it has been checked. */
 	background-image: url(../res/ui/dusk/checkbox-checked.svg);
 
+}
+
+.ipsCustomInput + label
+{
+	margin-left: 0.25em;
+	display: inline-block;
 }
 
 
